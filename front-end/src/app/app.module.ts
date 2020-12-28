@@ -19,6 +19,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import { EventCenterComponent } from './home/home/event-center/event-center.component';
+import { NewEventComponent } from './event/new-event/new-event.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EventCenterComponent } from './home/home/event-center/event-center.comp
     SignInComponent,
     HeaderComponent,
     FooterComponent,
-    EventCenterComponent
+    EventCenterComponent,
+    NewEventComponent
   ],
   imports: [
     BrowserModule,

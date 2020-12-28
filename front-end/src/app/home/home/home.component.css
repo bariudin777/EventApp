@@ -8,20 +8,18 @@ body{
 
 }
 #button1{
-height:20px; 
-width:130px; 
 margin: 10px -50px; 
+top:50%; 
+left:1500%;
 position:relative;
-top:25%; 
-left:25%;
+
 
 }
 #button2{
-height:20px; 
-width:140px; 
-margin: -250px -70px; 
+text-align:center;
+margin: 10px -50px; 
 position:relative;
-top:70%; 
-left:70%;
+top:50%; 
+left:1200%;
         
 }

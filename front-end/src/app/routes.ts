@@ -5,6 +5,7 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { HomeComponent } from './home/home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { EventCenterComponent } from './home/home/event-center/event-center.component';
+import { NewEventComponent } from './event/new-event/new-event.component';
 
 
 export const appRoutes: Routes = [
@@ -29,5 +30,8 @@ export const appRoutes: Routes = [
     },
     {
         path:'event-center', component:EventCenterComponent
+    },
+    {
+        path:'new-event', component:NewEventComponent
     }
 ];

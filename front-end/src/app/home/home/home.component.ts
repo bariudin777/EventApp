@@ -19,4 +19,7 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/event-center');
 
   }
+  goToNewEvent(): void{
+    this.router.navigateByUrl('/new-event');
+  }
 }
