@@ -1,0 +1,9 @@
+body{
+
+        background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+
+}
