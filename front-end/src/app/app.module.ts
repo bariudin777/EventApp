@@ -18,7 +18,7 @@ import { UserService } from './shared/user.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { FooterComponent } from './footer/footer.component';
-import { EventCenterComponent } from './event-center/event-center.component';
+import { EventCenterComponent } from './home/home/event-center/event-center.component';
 
 @NgModule({
   declarations: [

@@ -4,6 +4,7 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { HomeComponent } from './home/home/home.component';
 import { AuthGuard } from './auth/auth.guard';
+import { EventCenterComponent } from './home/home/event-center/event-center.component';
 
 
 export const appRoutes: Routes = [
@@ -25,5 +26,8 @@ export const appRoutes: Routes = [
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'
+    },
+    {
+        path:'event-center', component:EventCenterComponent
     }
 ];

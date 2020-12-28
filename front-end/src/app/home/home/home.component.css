@@ -7,3 +7,21 @@ body{
         -o-background-size: cover;
 
 }
+#button1{
+height:20px; 
+width:130px; 
+margin: 10px -50px; 
+position:relative;
+top:25%; 
+left:25%;
+
+}
+#button2{
+height:20px; 
+width:140px; 
+margin: -250px -70px; 
+position:relative;
+top:70%; 
+left:70%;
+        
+}
