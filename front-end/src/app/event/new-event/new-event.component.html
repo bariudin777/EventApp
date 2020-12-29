@@ -1,101 +1,48 @@
 <app-header></app-header>
-
+<body>
+  <div class="container" id="mybox">
+    <div class="notification is-primary">
 <div class="field is-horizontal">
     <div class="field-label is-normal">
-      <label class="label">Event Name:</label>
+      <label class="label has-text-dark">Event Name:</label>
     </div>
     <div class="field-body">
       <div class="field">
         <p class="control is-expanded has-icons-left">
-          <input class="input" type="text" placeholder="Name">
+          <input class="input" type="text" placeholder="Enter Event Name">
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
         </p>
       </div>
-      <div class="field-label is-normal">
-        <label class="label">Email:</label>
-      </div>
-      <div class="field">
-        <p class="control is-expanded has-icons-left has-icons-right">
-          <input class="input is-success" type="email" placeholder="Email" >
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
-        </p>
-      </div>
     </div>
   </div>
 
   <div class="field is-horizontal">
-    <div class="field-label"></div>
-    <div class="field-body">
-      <div class="field is-expanded">
-        <div class="field has-addons">
-          <p class="control">
-            <a class="button is-static">
-              050
-            </a>
-          </p>
-          <p class="control is-expanded">
-            <input class="input" type="tel" placeholder="Your phone number">
-          </p>
-        </div>
-        <p class="help">Enter Your Phone Number</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="field is-horizontal">
     <div class="field-label is-normal">
-      <label class="label">Location</label>
-    </div>
-    <div class="field-body">
-      <div class="field is-narrow">
-        <div class="control">
-          <div class="select is-fullwidth">
-            <select>
-              <option>North</option>
-              <option>Center</option>
-              <option>South</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="field is-horizontal">
-    <div class="field-label">
-      <label class="label">Already a member?</label>
-    </div>
-    <div class="field-body">
-      <div class="field is-narrow">
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="member">
-            Yes
-          </label>
-          <label class="radio">
-            <input type="radio" name="member">
-            No
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <label class="label">Select Members</label>
+      <label class="label has-text-dark">Select Members</label>
     </div>
     <div class="field-body">
       <div class="field">
         <div class="control">
           <input class="input is-danger" type="text" placeholder="e.g. Partnership opportunity">
+        </div>
+        <p class="help is-danger ">
+          This field is required
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="field is-horizontal">
+    <div class="field-label is-normal">
+      <label class="label has-text-dark">Select Form</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <button class="button is-link">Get Form</button>
         </div>
         <p class="help is-danger">
           This field is required
@@ -103,10 +50,11 @@
       </div>
     </div>
   </div>
-  
+
+
   <div class="field is-horizontal">
     <div class="field-label is-normal">
-      <label class="label">Send Msg</label>
+      <label class="label has-text-dark">Send Msg</label>
     </div>
     <div class="field-body">
       <div class="field">
@@ -124,10 +72,13 @@
     <div class="field-body">
       <div class="field">
         <div class="control">
-          <button class="button is-primary">
-            Send Form
+          <button class="button is-link">
+            Send Invitation
           </button>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
+</body>

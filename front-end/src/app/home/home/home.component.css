@@ -1,10 +1,10 @@
 body{
 
-        background: url("/assets/img/kalen-emsley-7bwQXzbF6KE-unsplash.jpg");
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
+background: url("/assets/img/kalen-emsley-7bwQXzbF6KE-unsplash.jpg");
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+-o-background-size: cover;
 
 }
 #button1{
