@@ -8,7 +8,7 @@ var eventSchema = new mongoose.Schema({
     },
     members: {
         type: String,
-        required: 'members email cannot be empty'
+        required:'Must enter at least one member'
     },
     formID: {
         type: String,

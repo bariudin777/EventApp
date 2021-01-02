@@ -1,89 +1,29 @@
-<!--Header of the New-Event page-->
 <app-header></app-header>
-<!--Here i put the form -->
-<body>
-  <div class="container" id="mybox">
-    <div class="notification is-primary">
-<div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <label class="label has-text-dark">Event Name:</label>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <p class="control is-expanded has-icons-left">
-          <input class="input" type="text" placeholder="Enter Event Name">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <label class="label has-text-dark">Select Members</label>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <input class="input is-danger" type="text" placeholder="e.g. Partnership opportunity">
-        </div>
-        <p class="help is-danger ">
-          This field is required
-        </p>
-      </div>
-    </div>
-  </div>
 
 
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <label class="label has-text-dark">Select Form</label>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <button class="button is-link">Get Form</button>
-        </div>
-        <p class="help is-danger">
-          This field is required
-        </p>
-      </div>
-    </div>
-  </div>
 
+<form #newEventForm="ngForm" (ngSubmit)=" onSubmit(newEventForm)">
+  <input type="text" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
+  required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
 
-  <div class="field is-horizontal">
-    <div class="field-label is-normal">
-      <label class="label has-text-dark">Send Msg</label>
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <textarea class="textarea" placeholder="You can add a note to participants"></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
+  <input type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Members email"
+    [ngClass]="{'invalid-textbox' :newEventForm.submitted }">
 
-  
-  <div class="field is-horizontal">
-    <div class="field-label">
-      <!-- Left empty for spacing -->
-    </div>
-    <div class="field-body">
-      <div class="field">
-        <div class="control">
-          <button class="button is-link">
-            Send Invitation
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.formID" name="formID" placeholder="Forms"
+  minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
+
+  <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.message" name="message" placeholder="message"
+  minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
+
+  <input type="submit" value="Sign Up">
+</form>
+
+<!-- Success message -->
+<div class="success" *ngIf="showSuccessMessage">
+  Saved successfully
 </div>
 
-</body>
-
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>
