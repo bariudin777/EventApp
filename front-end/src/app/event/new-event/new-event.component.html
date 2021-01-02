@@ -1,24 +1,36 @@
 <app-header></app-header>
+<body>
+  <div class="wrapper">
+    <div class="field is-horizontal" id="formContent">
+      <div class="field-body">
+        
+        <form #newEventForm="ngForm" (ngSubmit)=" onSubmit(newEventForm)">
+          
+          <label class="label"> Event Name</label>
+          <input type="text" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
+          required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
 
+          <label class="label">Members Email</label>
+          <input type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Please enter participants mail"
+            [ngClass]="{'invalid-textbox' :newEventForm.submitted }">
 
+            <label class="label">Form ID</label>
+          <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.formID" name="formID" placeholder="Form ID"
+          minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
+          <div class="buttons">
+            <button class="button is-link">Select Google Form</button>
+          </div>
+          <label class="label">Message</label>
+          <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.message" name="message" placeholder="Here you can write to participants"
+          minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
 
-<form #newEventForm="ngForm" (ngSubmit)=" onSubmit(newEventForm)">
-  <input type="text" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
-  required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
+          <input type="submit" value="Send">
+        </form>
+      </div>
+    </div>
+  </div>
 
-  <input type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Members email"
-    [ngClass]="{'invalid-textbox' :newEventForm.submitted }">
-
-  <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.formID" name="formID" placeholder="Forms"
-  minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
-
-  <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.message" name="message" placeholder="message"
-  minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
-
-  <input type="submit" value="Sign Up">
-</form>
-
-<!-- Success message -->
+  <!-- Success message -->
 <div class="success" *ngIf="showSuccessMessage">
   Saved successfully
 </div>
@@ -27,3 +39,6 @@
 <div class="alert" *ngIf="serverErrorMessages">
   {{serverErrorMessages}}
 </div>
+</body>
+
+

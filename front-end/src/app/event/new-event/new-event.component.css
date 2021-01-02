@@ -13,3 +13,13 @@ body{
     padding: 10px;
     margin: auto;
   }
+
+
+  label{
+     position: relative;
+     max-width: 120px;
+  }
+  button{
+      margin-left: 150px;
+      
+  }
