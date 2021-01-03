@@ -25,7 +25,8 @@ export class NewEventService {
 
 //HttpMethods
 
-postEvent(newEvent: NewEvent){
+  postEvent(newEvent: NewEvent) {
+  
   return this.http.post(environment.apiBaseUrl + '/new-event', newEvent, this.noAuthHeader);
 }
 

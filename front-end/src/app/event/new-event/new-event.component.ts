@@ -24,6 +24,7 @@ export class NewEventComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   emails: Email[] = [];
+  members: String[] =[]
 
   constructor(public newEventService:NewEventService) { }
 
@@ -36,7 +37,8 @@ export class NewEventComponent implements OnInit {
 
     // Add our fruit
     if ((value || '').trim()) {
-      this.emails.push({addr: value.trim()});
+      this.emails.push({ addr: value.trim() });
+      this.members.push(value)
     }
 
     // Reset the input value
@@ -44,7 +46,7 @@ export class NewEventComponent implements OnInit {
       input.value = '';
     }
   }
-
+  // Chip removal
   remove(fruit: Email): void {
     const index = this.emails.indexOf(fruit);
 
@@ -54,9 +56,10 @@ export class NewEventComponent implements OnInit {
   }
 
 
-
   onSubmit(form: NgForm) {
-    //optional- take from here the emails for the send
+
+    form.controls['members'].setValue(this.members)
+    //form.controls['members'].setValue(this.emails.values())
     this.newEventService.postEvent(form.value).subscribe(
       res => {
         //send emails
