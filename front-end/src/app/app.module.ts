@@ -20,7 +20,10 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import { EventCenterComponent } from './home/home/event-center/event-center.component';
 import { NewEventComponent } from './event/new-event/new-event.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,11 @@ import { NewEventComponent } from './event/new-event/new-event.component';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatChipsModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -3,23 +3,38 @@
   <div class="wrapper">
     <div class="field is-horizontal" id="formContent">
       <div class="field-body">
-        
+        <!--Event Form Creation-->
         <form #newEventForm="ngForm" (ngSubmit)=" onSubmit(newEventForm)">
-          
+          <!--Event Name Input-->
           <label class="label"> Event Name</label>
           <input type="text" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
           required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
-
+          <!--Here i insert chip material-->
+          <!--Event Members Input-->
           <label class="label">Members Email</label>
-          <input type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Please enter participants mail"
-            [ngClass]="{'invalid-textbox' :newEventForm.submitted }">
-
+          <mat-form-field class="example-chip-list">
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip *ngFor="let email of emails" [selectable]="selectable"
+                      [removable]="removable" (removed)="remove(email)">
+                {{email.addr}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="add($event)"
+                    type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Please enter participants mail"
+                    [ngClass]="{'invalid-textbox' :newEventForm.submitted }">
+            </mat-chip-list>
+          </mat-form-field>
+          <!--Event Form Id Input-->
             <label class="label">Form ID</label>
           <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.formID" name="formID" placeholder="Form ID"
           minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
           <div class="buttons">
             <button class="button is-link">Select Google Form</button>
           </div>
+          <!--Event Message Input-->
           <label class="label">Message</label>
           <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.message" name="message" placeholder="Here you can write to participants"
           minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
@@ -30,7 +45,7 @@
     </div>
   </div>
 
-  <!-- Success message -->
+<!-- Success message -->
 <div class="success" *ngIf="showSuccessMessage">
   Saved successfully
 </div>

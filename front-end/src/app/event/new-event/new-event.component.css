@@ -17,9 +17,13 @@ body{
 
   label{
      position: relative;
-     max-width: 120px;
+     margin-left: auto;
   }
   button{
-      margin-left: 150px;
+      margin-left: 130px;
       
+  }
+
+  .example-chip-list {
+    width: 100%;
   }

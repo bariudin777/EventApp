@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { from } from 'rxjs';
 import { NewEventService } from 'src/app/shared/new-event.service';
 
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {MatChipInputEvent} from '@angular/material/chips';
+
+export interface Email {
+  addr: string;
+}
 
 
 @Component({
@@ -13,14 +18,45 @@ import { NewEventService } from 'src/app/shared/new-event.service';
 export class NewEventComponent implements OnInit {
   showSuccessMessage: boolean |undefined;
   serverErrorMessages: string | undefined;
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  emails: Email[] = [];
 
   constructor(public newEventService:NewEventService) { }
 
   ngOnInit(): void {
   }
 
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our fruit
+    if ((value || '').trim()) {
+      this.emails.push({addr: value.trim()});
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  remove(fruit: Email): void {
+    const index = this.emails.indexOf(fruit);
+
+    if (index >= 0) {
+      this.emails.splice(index, 1);
+    }
+  }
+
+
+
   onSubmit(form: NgForm) {
-    
+    //optional- take from here the emails for the send
     this.newEventService.postEvent(form.value).subscribe(
       res => {
         //send emails
