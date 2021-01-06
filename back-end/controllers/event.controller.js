@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 
 const Event = mongoose.model('Event');
+const mailer = require('../controllers/mailer.controller');
+
 
 
 module.exports.save = (req, res, next) => {
@@ -10,6 +12,10 @@ module.exports.save = (req, res, next) => {
     event.members = req.body.members;
     event.formID = req.body.formID;
     event.message = req.body.message;
+    
+    
+
+
     event.save((err, doc) => {
         if (!err) {
             res.send(doc)

@@ -1,5 +1,9 @@
 const jwt = require('jsonwebtoken');
 
+
+/**
+ * Verify Jason web token for login
+ */
 module.exports.verifyJwtToken = (req, res, next) => {
     var token;
     if ('authorization' in req.headers)

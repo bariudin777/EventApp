@@ -35,7 +35,6 @@ export class NewEventComponent implements OnInit {
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
     if ((value || '').trim()) {
       this.emails.push({ addr: value.trim() });
       this.members.push(value)
@@ -59,13 +58,13 @@ export class NewEventComponent implements OnInit {
   onSubmit(form: NgForm) {
 
     form.controls['members'].setValue(this.members)
-    //form.controls['members'].setValue(this.emails.values())
     this.newEventService.postEvent(form.value).subscribe(
       res => {
         //send emails
         this.showSuccessMessage = true;
         setTimeout(() => this.showSuccessMessage = false, 4000);
         this.resetForm(form);
+        
       },
       err => {
         if (err.status === 422) {
