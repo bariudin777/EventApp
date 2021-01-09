@@ -4,14 +4,14 @@
     <div class="field is-horizontal" id="formContent">
       <div class="field-body">
         <!--Event Form Creation-->
-        <form #newEventForm="ngForm" (ngSubmit)=" onSubmit(newEventForm)">
+        <form #newEventForm="ngForm" (ngSubmit)="onSubmit(newEventForm)">
           <!--Event Name Input-->
           <label class="label"> Event Name</label>
-          <input type="text" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
+          <input type="email" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
           required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
           <!--Here i insert chip material-->
           <!--Event Members Input-->
-          <label class="label">Members Email</label>
+          <mat-label class="label">Members Email</mat-label>
           <mat-form-field class="example-chip-list">
             <mat-chip-list #chipList aria-label="Fruit selection">
               <mat-chip *ngFor="let email of emails" [selectable]="selectable"

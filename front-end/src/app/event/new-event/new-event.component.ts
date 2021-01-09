@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm, Validators } from '@angular/forms';
 import { NewEventService } from 'src/app/shared/new-event.service';
 
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { NewEmailService } from 'src/app/shared/new-email.service';
 
 export interface Email {
   addr: string;
@@ -24,12 +25,12 @@ export class NewEventComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   emails: Email[] = [];
-  members: String[] =[]
+  members: String[] = [];
+  
 
-  constructor(public newEventService:NewEventService) { }
+  constructor(public newEventService:NewEventService,public emailService:NewEmailService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
@@ -56,11 +57,11 @@ export class NewEventComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-
     form.controls['members'].setValue(this.members)
+    console.log("in onsubmit method");
+
     this.newEventService.postEvent(form.value).subscribe(
       res => {
-        //send emails
         this.showSuccessMessage = true;
         setTimeout(() => this.showSuccessMessage = false, 4000);
         this.resetForm(form);
@@ -76,6 +77,25 @@ export class NewEventComponent implements OnInit {
 
       }
     );
+      //send emails
+    console.log("in onsubmit method and before postMail");
+    this.emailService.postMail(form.value).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        if (err.status === 422) {
+          this.serverErrorMessages = err.error.join('<br/>');
+        }
+        else {
+          this.serverErrorMessages = 'Something went wrong.Please contact admin.';
+        }
+
+      }
+
+    )
+
+
   }
 
 
@@ -86,7 +106,5 @@ export class NewEventComponent implements OnInit {
       formID: '',
       message: ''
     }
-    
   }
-
 }

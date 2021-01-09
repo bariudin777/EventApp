@@ -35,7 +35,7 @@ export const appRoutes: Routes = [
         path:'new-event', component:NewEventComponent
     },
     {
-        path:'send-mail',redirectTo:'/home',pathMatch:'full'
+        path:'new-mail',redirectTo:'/home',pathMatch:'full'
         
     }
 
