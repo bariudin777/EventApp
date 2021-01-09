@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { NewEventService } from 'src/app/shared/new-event.service';
 
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import { NewEmailService } from 'src/app/shared/new-email.service';
+import { Router } from "@angular/router";
 
 export interface Email {
   addr: string;
@@ -28,7 +29,7 @@ export class NewEventComponent implements OnInit {
   members: String[] = [];
   
 
-  constructor(public newEventService:NewEventService,public emailService:NewEmailService) { }
+  constructor(public newEventService:NewEventService,public emailService:NewEmailService,private router : Router) { }
 
   ngOnInit(): void { }
 
@@ -78,7 +79,7 @@ export class NewEventComponent implements OnInit {
       }
     );
       //send emails
-    console.log("in onsubmit method and before postMail");
+    console.log("in on submit method and before postMail");
     this.emailService.postMail(form.value).subscribe(
       res => {
         console.log(res);
@@ -94,10 +95,7 @@ export class NewEventComponent implements OnInit {
       }
 
     )
-
-
   }
-
 
   resetForm(form: NgForm) {
     this.newEventService.selectedEvent = {
@@ -107,4 +105,9 @@ export class NewEventComponent implements OnInit {
       message: ''
     }
   }
+
+  actionCenter():void{
+    this.router.navigateByUrl('/event-center');
+}
+
 }

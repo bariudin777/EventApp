@@ -7,7 +7,7 @@
         <form #newEventForm="ngForm" (ngSubmit)="onSubmit(newEventForm)">
           <!--Event Name Input-->
           <label class="label"> Event Name</label>
-          <input type="email" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
+          <input type="text" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
           required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
           <!--Here i insert chip material-->
           <!--Event Members Input-->
@@ -39,7 +39,7 @@
           <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.message" name="message" placeholder="Here you can write to participants"
           minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
 
-          <input type="submit" value="Send">
+          <input type="submit" value="Send" (click)="actionCenter()">
         </form>
       </div>
     </div>
