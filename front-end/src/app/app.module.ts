@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormModalComponent } from './event/new-event/form-modal/form-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HeaderComponent,
     FooterComponent,
     EventCenterComponent,
-    NewEventComponent
+    NewEventComponent,
+    FormModalComponent
   ],
   imports: [
     BrowserModule,

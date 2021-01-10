@@ -27,6 +27,8 @@ export class NewEventComponent implements OnInit {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   emails: Email[] = [];
   members: String[] = [];
+  showModal: boolean = false;
+  selected: string = '';
   
 
   constructor(public newEventService:NewEventService,public emailService:NewEmailService,private router : Router) { }
@@ -106,8 +108,22 @@ export class NewEventComponent implements OnInit {
     }
   }
 
-  actionCenter():void{
-    this.router.navigateByUrl('/event-center');
+  actionCenter(): void{
+    //TO FIX- navigate only if the form filament was completely finished
+    setTimeout(() => {
+      this.router.navigateByUrl('/event-center');
+    }, 2000);
+    
+  }
+  
+  selectItem() {
+    this.showModal = true;
+  }
+  
+ selectedItem(selected:string) {
+  this.showModal = false; // hide modal
+  if(selected) {
+    this.selected = selected;
+  }
 }
-
 }
