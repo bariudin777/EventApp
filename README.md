@@ -21,3 +21,10 @@ You can find me on : [![LinkedIn][2.2]][2].
 # Login and sign up window
 ![](1.jpg)
 
+# Home page
+![](2.jpg)
+
+# create new event window
+![](3.jpg)
+
+
