@@ -1,6 +1,18 @@
 # EventApp
 MEAN-Stack app
 
+
+
+# Login and sign up window
+![](1.jpg)
+
+# Home page
+![](2.jpg)
+
+# create new event window
+![](3.jpg)
+
+
 ### Hello, folks! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
 
@@ -17,14 +29,3 @@ You can find me on : [![LinkedIn][2.2]][2].
 
 
 [2]: https://www.linkedin.com/in/danielbariudin/
-
-# Login and sign up window
-![](1.jpg)
-
-# Home page
-![](2.jpg)
-
-# create new event window
-![](3.jpg)
-
-
