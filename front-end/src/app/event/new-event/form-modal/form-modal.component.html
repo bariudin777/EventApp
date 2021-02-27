@@ -9,15 +9,17 @@
           
         <div class="select">
           <select name="selected" [(ngModel)]="selected">
-            <option value="">Select a item</option>
-            <option value="Item 1">Item 1</option>
-            <option value="Item 2">Item 2</option>
+            <option value="">Select a form</option>
+            <option value="simple form">
+              <label>simple form</label>
+            </option>
+            <option value="Item 2">birth-day form</option>
           </select>
         </div>
   
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success">Save changes</button>
+        <button class="button is-success" (click)="selectedItem()">Show Form</button>
         <button class="button" (click)="cancel()">Cancel</button>
       </footer>
     </div>

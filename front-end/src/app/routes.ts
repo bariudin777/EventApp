@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { EventCenterComponent } from './home/home/event-center/event-center.component';
 import { NewEventComponent } from './event/new-event/new-event.component';
+import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-form.component';
 
 
 export const appRoutes: Routes = [
@@ -25,19 +26,30 @@ export const appRoutes: Routes = [
         //path: 'home', component: HomeComponent,canActivate:[AuthGuard],
         path: 'home', component: HomeComponent
     },
+    
     {
         path: '', redirectTo: '/login', pathMatch: 'full'
     },
+
     {
         path:'event-center', component:EventCenterComponent
     },
+
     {
         path:'new-event', component:NewEventComponent
     },
+
+    {
+        path:'simple-form',component:SimpleFormComponent
+        
+    },
+
     {
         path:'new-mail',redirectTo:'/home',pathMatch:'full'
         
-    }
+    },
+    
+
 
 
 ];

@@ -118,6 +118,7 @@ export class NewEventComponent implements OnInit {
   
   selectItem() {
     this.showModal = true;
+    console.log("in select item")
   }
   
  selectedItem(selected:string) {

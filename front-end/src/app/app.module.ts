@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { HeaderComponent } from './header/header.component';
+import { FormModalComponent } from './event/new-event/form-modal/form-modal.component';
 //routes
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home/home.component';
@@ -24,7 +25,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormModalComponent } from './event/new-event/form-modal/form-modal.component';
+
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import { MatDatepickerModule} from '@angular/material/datepicker'
+import { MatStepperModule} from '@angular/material/stepper'
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatButtonModule } from '@angular/material/button';
+import { BaseFormComponent } from './event/new-event/forms/base-form/base-form.component';
+import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-form.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +52,9 @@ import { FormModalComponent } from './event/new-event/form-modal/form-modal.comp
     FooterComponent,
     EventCenterComponent,
     NewEventComponent,
-    FormModalComponent
+    FormModalComponent,
+    BaseFormComponent,
+    SimpleFormComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +64,19 @@ import { FormModalComponent } from './event/new-event/form-modal/form-modal.comp
     BrowserAnimationsModule,
     MatChipsModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule, 
+    MatInputModule, 
+    MatSelectModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatAutocompleteModule,
+    MatStepperModule,
+    MatButtonModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
