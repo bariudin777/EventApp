@@ -1,5 +1,7 @@
 # EventApp
-MEAN-Stack app
+A MEAN Fullstack event generating application.
+The app is using ml recommendation system model, 
+and integrates with outer services.
 
 
 
