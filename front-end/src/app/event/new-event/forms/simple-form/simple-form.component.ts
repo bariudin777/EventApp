@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-simple-form',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class SimpleFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -20,8 +21,8 @@ export class SimpleFormComponent implements OnInit {
 
   onClick(form: NgForm): void {
     const json = JSON.stringify(form.value);
-
     console.log(json);
+    this.router.navigateByUrl('/new-event');
   }
 
 }
