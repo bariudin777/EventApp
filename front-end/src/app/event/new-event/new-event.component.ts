@@ -57,11 +57,13 @@ export class NewEventComponent implements OnInit {
       this.emails.splice(index, 1);
     }
   }
-
+/**
+ * fix the submission
+ * @param form 
+ */
 
   onSubmit(form: NgForm) {
     form.controls['members'].setValue(this.members)
-    console.log("in onsubmit method");
 
     this.newEventService.postEvent(form.value).subscribe(
       res => {

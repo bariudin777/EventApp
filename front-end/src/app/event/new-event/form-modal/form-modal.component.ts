@@ -23,8 +23,20 @@ export class FormModalComponent implements OnInit {
   selectedItem() {
     //here i will cancel the redirection and just return the form id
     //doing this just for debug
+    debugger;
+    /*
+      Plan:
+      Create Form object
+      Create Form Manager
+      Init all data with both object
+      Send it to create new event
+    */
+
+
+
     if (this.selected == "simple form") {
-      this.router.navigateByUrl('/simple-form')
+      this.router.navigateByUrl('/simple-form');
+      
     }
     this.onClose.emit(this.selected)
   }
