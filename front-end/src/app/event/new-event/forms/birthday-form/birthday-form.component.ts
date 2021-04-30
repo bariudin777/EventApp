@@ -17,7 +17,6 @@ export class BirthdayFormComponent implements OnInit {
 
   @Input() modelGroupName: string | undefined;
   constructor() { }
-
   ngOnInit(): void {
   }
 

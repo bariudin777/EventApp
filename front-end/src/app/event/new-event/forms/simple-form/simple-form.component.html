@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-  <mat-card class="example-card">
+  <mat-card class="basic-form-card">
     <mat-card-header>
       <mat-card-title>Event Form</mat-card-title>
       <mat-card-subtitle>This is a form for your next event -  please fill it up! </mat-card-subtitle>
@@ -8,10 +8,18 @@
     <mat-card-content>
       <form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
         <mat-horizontal-stepper linear>
+          <!--First And Basic-->
           <mat-step #personal="ngModelGroup" ngModelGroup="personal" [completed]="personal.valid">
             <ng-template matStepLabel>Personal</ng-template>
             <app-base-form modelGroupName="app-base-form"></app-base-form>
           </mat-step>
+          <!--BirthDay-->
+
+          <mat-step id='birthdayContainer' #birthday="ngModelGroup" ngModelGroup="birthday" [completed]="personal.valid">
+            <ng-template matStepLabel>BirthDay</ng-template>
+          </mat-step>
+
+          <!--All Done-->
           <mat-step>
             <ng-template matStepLabel>Done</ng-template>
             <p>Thanks for using the survey!</p>

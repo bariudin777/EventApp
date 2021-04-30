@@ -7,6 +7,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { EventCenterComponent } from './home/home/event-center/event-center.component';
 import { NewEventComponent } from './event/new-event/new-event.component';
 import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-form.component';
+import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/birthday-form.component';
 
 
 export const appRoutes: Routes = [
@@ -43,7 +44,6 @@ export const appRoutes: Routes = [
         path:'simple-form',component:SimpleFormComponent
         
     },
-
     {
         path:'new-mail',redirectTo:'/home',pathMatch:'full'
         

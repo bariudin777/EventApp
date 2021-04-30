@@ -1,5 +1,6 @@
 import { Component, OnInit,EventEmitter,Output,Input  } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataManagerService } from 'src/app/shared/data-manager.service';
 
 @Component({
   selector: 'app-form-modal',
@@ -8,36 +9,26 @@ import { Router } from '@angular/router';
 })
 export class FormModalComponent implements OnInit {
 
-
   @Input()
   selected: string = ''; 
   
   @Output()
   onClose = new EventEmitter();
   //HERE I WILL INSERT THE FORM FACTORY
-  constructor(private router : Router) { }
+  constructor(private router : Router, private data_manager:DataManagerService) { }
 
   ngOnInit(): void {
   }
   cancel() { this.onClose.emit(null); }
+  
   selectedItem() {
-    //here i will cancel the redirection and just return the form id
-    //doing this just for debug
-    /*
-      Plan:
-      Create Form object
-      Create Form Manager
-      Init all data with both object
-      Send it to create new event
-    */
-
-
-
     if (this.selected == "basic-option") {
+      this.data_manager.sendFormId("basic-option")
       this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "simple form") {
-      
+    else if (this.selected == "birth-day-option") {
+      this.data_manager.sendFormId("birth-day-option")
+      this.router.navigateByUrl('/simple-form');
     }
     else if (this.selected == "simple form") {
       
