@@ -21,7 +21,6 @@ export class SimpleFormComponent implements OnInit {
 
   onClick(form: NgForm): void {
     const json = JSON.stringify(form.value);
-    console.log(json);
     this.router.navigateByUrl('/new-event');
   }
 

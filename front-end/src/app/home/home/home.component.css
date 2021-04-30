@@ -5,22 +5,25 @@ background: url("/assets/img/kalen-emsley-7bwQXzbF6KE-unsplash.jpg");
 -moz-background-size: cover;
 background-size: cover;
 -o-background-size: cover;
-
 }
-#button1{
-margin: 10px -50px; 
-top:50%; 
-left:1500%;
-position:relative;
+#action-center-container{
+  position: absolute;
+  top: 10%;
+  margin-top: 1%;
+}
+#new-event-container{
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  margin: 10px;
+}
 
+#button1{
+  width: 100%;
 
 }
 #button2{
-text-align:center;
-margin: 10px -50px; 
-position:relative;
-top:50%; 
-left:1200%;
+width: 100%;
         
 }
 header {
@@ -71,3 +74,5 @@ header {
       display: none;
     }
   }
+
+  

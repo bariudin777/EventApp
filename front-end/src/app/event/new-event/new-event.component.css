@@ -27,3 +27,7 @@ body{
   .example-chip-list {
     width: 100%;
   }
+  #select-form-btn{
+    left: 88%;
+    margin-left: unset !important;
+  }

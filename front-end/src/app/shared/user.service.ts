@@ -51,6 +51,7 @@ export class UserService {
     var token = this.getToken();
     if (token) {
       var userPayload = atob(token.split('.')[1]);
+      debugger;
       return JSON.parse(userPayload);
     }
     else

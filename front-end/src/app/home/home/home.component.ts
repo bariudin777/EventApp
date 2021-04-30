@@ -12,8 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService,private router : Router) { }
 
   ngOnInit(): void {
-    //for debug
-    console.log("home page ")
   }
 //redirect to action-center
   goToActionCenter(): void{

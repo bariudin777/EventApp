@@ -38,6 +38,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatButtonModule } from '@angular/material/button';
 import { BaseFormComponent } from './event/new-event/forms/base-form/base-form.component';
 import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-form.component';
+import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/birthday-form.component';
 
 
 
@@ -54,7 +55,8 @@ import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-
     NewEventComponent,
     FormModalComponent,
     BaseFormComponent,
-    SimpleFormComponent
+    SimpleFormComponent,
+    BirthdayFormComponent
   ],
   imports: [
     BrowserModule,

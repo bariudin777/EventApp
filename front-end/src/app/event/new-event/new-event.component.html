@@ -34,12 +34,12 @@
           <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.formID" name="formID" placeholder="Form ID"
           minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
           <div class="buttons">
-
-            <button class="button is-link" (click)="selectItem()" (onClose)="showModal=false">Select Event Form</button>
+            <div>
+              <button id="select-form-btn" class="button is-link" (click)="selectItem()" (onClose)="showModal=false">Select Event Form</button>
+            </div>
             <p *ngIf="selected">Selected: {{ selected }}</p>
             <app-form-modal *ngIf="showModal" (onClose)="selectedItem($event)"></app-form-modal>
            
-
           </div>
           <!--Event Message Input-->
           <label class="label">Message</label>
