@@ -17,7 +17,6 @@ export class SimpleFormComponent implements OnInit {
  
   
   ngAfterViewInit() {
-    debugger;
     switch (this.form_type) {
       case "basic-option":
         console.log("in basic");
@@ -28,8 +27,6 @@ export class SimpleFormComponent implements OnInit {
     }
     
   }
-
-
 
 
   ngOnInit(): void {
@@ -53,25 +50,3 @@ export class SimpleFormComponent implements OnInit {
   }
 
 }
-/*
-    try {
-      this.data_manager.curr_msg.subscribe(form_type=>this.form_type=form_type)
-
-      if (typeof this.element =="undefined") {
-        throw "Element is Empty "
-      } 
-      switch (this.form_type) {
-        case "basic-option":
-          console.log("nothing to add- you are boring...")
-          break;
-        case "birth-day-option":
-          console.log(this.form_type)
-          this.element.nativeElement.innerHTML = ` <app-birthday-form modelGroupName="app-birthday-form"></app-birthday-form>`;
-          break;
-      }
-    }
-    catch (err) {
-      console.log(err)
-    }
-
-*/

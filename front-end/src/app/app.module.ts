@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -78,7 +79,8 @@ import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/bir
     MatMomentDateModule,
     MatAutocompleteModule,
     MatStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

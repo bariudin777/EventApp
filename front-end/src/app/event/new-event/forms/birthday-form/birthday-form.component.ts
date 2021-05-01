@@ -2,7 +2,6 @@ import { Component, OnInit, Input, SkipSelf } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 
-
 @Component({
   selector: 'app-birthday-form',
   templateUrl: './birthday-form.component.html',
