@@ -6,17 +6,17 @@
       <mat-card-subtitle>This is a form for your next event -  please fill it up! </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm" novalidate>
         <mat-horizontal-stepper linear>
-          <!--First And Basic-->
-          <mat-step #personal="ngModelGroup" ngModelGroup="personal" [completed]="personal.valid">
+          <mat-step *ngIf="true" #personal="ngModelGroup" ngModelGroup="personal" [completed]="personal.valid">
             <ng-template matStepLabel>Personal</ng-template>
             <app-base-form modelGroupName="app-base-form"></app-base-form>
           </mat-step>
           <!--BirthDay-->
 
-          <mat-step id='birthdayContainer' #birthday="ngModelGroup" ngModelGroup="birthday" [completed]="personal.valid">
+          <mat-step *ngIf="flag==='birth-day'" #birthday="ngModelGroup" ngModelGroup="birthday" [completed]="birthday.valid">
             <ng-template matStepLabel>BirthDay</ng-template>
+            <app-birthday-form modelGroupName="app-birthday-form"></app-birthday-form>
           </mat-step>
 
           <!--All Done-->
@@ -24,11 +24,11 @@
             <ng-template matStepLabel>Done</ng-template>
             <p>Thanks for using the survey!</p>
             <div>
-              <button mat-raised-button type="button" (click)="onClick(f)" color="primary">Submit Data</button>
+              <button mat-raised-button type="button" (click)="onClick(form)" color="primary">Submit Data</button>
             </div>
           </mat-step>
         </mat-horizontal-stepper>
       </form>
-      <pre>{{ f.value | json }}</pre>
+      <pre>{{ form.value | json }}</pre>
     </mat-card-content>
   </mat-card>

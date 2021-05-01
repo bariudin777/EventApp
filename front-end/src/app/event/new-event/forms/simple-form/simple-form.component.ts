@@ -10,29 +10,29 @@ import { DataManagerService } from 'src/app/shared/data-manager.service';
 })
 export class SimpleFormComponent implements OnInit {
   private form_type: string | undefined;
+  public flag: string="";
 
-  constructor(private router : Router,private data_manager:DataManagerService ) { }
-  @ViewChild('birthdayContainer',{ static: true }) element!: ElementRef 
+
+  constructor(private router : Router,private data_manager:DataManagerService) { }
+ 
   
+  ngAfterViewInit() {
+    switch (this.form_type) {
+      case "basic-option":
+        this.flag='birth-day'
+        break;
+      case "birth-day-option":
+        this.flag='birth-day'
+        break;
+    }
+  }
+
 
 
 
   ngOnInit(): void {
     try {
-      this.data_manager.curr_msg.subscribe(form_type=>this.form_type=form_type)
-      debugger;
-      if (typeof this.element =="undefined") {
-        throw "ViewChild element is undefined "
-      } 
-      switch (this.form_type) {
-        case "basic-option":
-          console.log("nothing to add- you are boring...")
-          break;
-        case "birth-day-option":
-          console.log("in birthday"+this.form_type)
-          this.element.nativeElement.innerHTML = ` <app-birthday-form modelGroupName="app-birthday-form"></app-birthday-form>`;
-          break;
-      }
+      this.data_manager.curr_msg.subscribe(form_type => this.form_type = form_type)
     }
     catch (err) {
       console.log(err)
