@@ -8,11 +8,11 @@
     <mat-card-content>
       <form (ngSubmit)="onSubmit(form)" #form="ngForm" novalidate>
         <mat-horizontal-stepper linear>
-          <mat-step *ngIf="true" #personal="ngModelGroup" ngModelGroup="personal" [completed]="personal.valid">
+          <mat-step #personal="ngModelGroup" ngModelGroup="personal" [completed]="personal.valid">
             <ng-template matStepLabel>Personal</ng-template>
             <app-base-form modelGroupName="app-base-form"></app-base-form>
           </mat-step>
-          <!--BirthDay-->
+          <!--BirthDay.-->
 
           <mat-step *ngIf="flag==='birth-day'" #birthday="ngModelGroup" ngModelGroup="birthday" [completed]="birthday.valid">
             <ng-template matStepLabel>BirthDay</ng-template>

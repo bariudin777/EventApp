@@ -17,14 +17,16 @@ export class SimpleFormComponent implements OnInit {
  
   
   ngAfterViewInit() {
+    debugger;
     switch (this.form_type) {
       case "basic-option":
-        this.flag='birth-day'
+        console.log("in basic");
         break;
       case "birth-day-option":
         this.flag='birth-day'
         break;
     }
+    
   }
 
 
@@ -32,6 +34,7 @@ export class SimpleFormComponent implements OnInit {
 
   ngOnInit(): void {
     try {
+      this.flag=""
       this.data_manager.curr_msg.subscribe(form_type => this.form_type = form_type)
     }
     catch (err) {
