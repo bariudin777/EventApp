@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataManagerService } from '../shared/data-manager.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  private user_name: string | undefined;
+  constructor(private data_manager:DataManagerService) { }
 
   ngOnInit(): void {
+    this.data_manager.curr_id_msg.subscribe(user_name => this.user_name = user_name)
+    debugger;
   }
 
 }

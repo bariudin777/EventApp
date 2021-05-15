@@ -3,6 +3,7 @@ import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { UserService } from '../../shared/user.service';
+import { DataManagerService } from '../../shared/data-manager.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +12,7 @@ import { UserService } from '../../shared/user.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private userService: UserService,private router : Router) { }
+  constructor(private userService: UserService,private router : Router,private data_manager:DataManagerService) { }
 
   model ={
     email :'',
@@ -25,16 +26,26 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form)
+
     this.userService.login(form.value).subscribe(
       res => {
-        this.userService.setToken(res);
-        this.router.navigateByUrl('/home');
+        if (res != null || typeof res != 'undefined') {
+          const user_name = this.generateUserName(form.value);
+          this.data_manager.sendName(user_name);
+          this.userService.setToken(res);
+          this.router.navigateByUrl('/home');
+        }
       },
       err => {
         this.serverErrorMessages = err.error.message;
       }
     );
+  }
+  generateUserName(form: any): string {
+    //take the name from email
+    const index = form.email.indexOf('@');
+    const name = form.email.substr(0, index);
+    return name;
   }
 
 }
