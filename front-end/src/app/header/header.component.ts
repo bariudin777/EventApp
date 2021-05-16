@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataManagerService } from '../shared/data-manager.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,15 @@ import { DataManagerService } from '../shared/data-manager.service';
 })
 export class HeaderComponent implements OnInit {
   private user_name: string | undefined;
-  constructor(private data_manager:DataManagerService) { }
+  constructor(private data_manager:DataManagerService,private router : Router) { }
 
   ngOnInit(): void {
-    this.data_manager.curr_id_msg.subscribe(user_name => this.user_name = user_name)
-    debugger;
+    //TODO- fix name transport
+    this.data_manager.curr_user_name.subscribe(un => this.user_name = un);
+  }
+
+  goToHome(): void{
+    this.router.navigateByUrl('/home');
   }
 
 }

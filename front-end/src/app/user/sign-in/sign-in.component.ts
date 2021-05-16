@@ -30,8 +30,9 @@ export class SignInComponent implements OnInit {
     this.userService.login(form.value).subscribe(
       res => {
         if (res != null || typeof res != 'undefined') {
+          
           const user_name = this.generateUserName(form.value);
-          this.data_manager.sendName(user_name);
+          this.data_manager.sendUserName(user_name);
           this.userService.setToken(res);
           this.router.navigateByUrl('/home');
         }

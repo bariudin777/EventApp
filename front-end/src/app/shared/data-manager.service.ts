@@ -5,19 +5,21 @@ import {BehaviorSubject} from 'rxjs'
   providedIn: 'root'
 })
 export class DataManagerService {
+  
   private form_msg = new BehaviorSubject<string>("basic-option");
-  private name_msg = new BehaviorSubject<string>("Guest");
-  curr_id_msg = this.name_msg.asObservable();
+  private user_name = new BehaviorSubject<string>("Guest");
   curr_msg = this.form_msg.asObservable();
+  curr_user_name = this.user_name.asObservable();
 
   constructor() { }
-
+  //send form id name
   sendFormId(msg: string) {
     this.form_msg.next(msg)
   }
 
-  sendName(msg: string) {
-    this.name_msg.next(msg)
+  sendUserName(msg: string) {
+    console.log("data manager: " + msg);
+    this.user_name.next(msg); 
   }
 
 }
