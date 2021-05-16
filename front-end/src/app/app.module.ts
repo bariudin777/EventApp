@@ -40,8 +40,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BaseFormComponent } from './event/new-event/forms/base-form/base-form.component';
 import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-form.component';
 import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/birthday-form.component';
-import { RecomandationPopupComponent } from './recomandation-popup/recomandation-popup/recomandation-popup.component';
-import { RecommendationPopupComponent } from './recomandation-popup/recommendation-popup/recommendation-popup.component';
+import { RecommendationPopupComponent } from './recommendation-popup/recommendation-popup/recommendation-popup.component';
 
 
 
@@ -60,6 +59,7 @@ import { RecommendationPopupComponent } from './recomandation-popup/recommendati
     BaseFormComponent,
     SimpleFormComponent,
     BirthdayFormComponent,
+    RecommendationPopupComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  private showModal = true;
   constructor(private userService: UserService,private router : Router) { }
 
   ngOnInit(): void {
@@ -21,4 +21,15 @@ export class HomeComponent implements OnInit {
   goToNewEvent(): void{
     this.router.navigateByUrl('/new-event');
   }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const modal  = document.getElementById("recommendation-modal")
+      if (modal == null) {
+        return;
+      }
+      modal.style.display = 'block';
+    },1000)
+  }
+
 }
