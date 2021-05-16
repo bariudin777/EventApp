@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataManagerService } from 'src/app/shared/data-manager.service';
 
 @Component({
   selector: 'app-recommendation-popup',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommendation-popup.component.css']
 })
 export class RecommendationPopupComponent implements OnInit {
-
-  constructor() { }
+  public user_name: string | undefined;
+  constructor(private data_manager:DataManagerService) { }
 
   ngOnInit(): void {
+    this.data_manager.curr_user_name.subscribe(un => this.user_name = un);
+    
   }
 
 }
