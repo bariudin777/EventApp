@@ -15,4 +15,19 @@ export class RecommendationPopupComponent implements OnInit {
     
   }
 
+
+  createTable():void {
+    
+  }
+
+
+  closeModal(): void{
+    const modal = document.getElementById("recommendation-modal");
+    if (modal == null || typeof modal == 'undefined') {
+      return;
+    }
+    modal.style.display = "none";
+  }
+
+
 }

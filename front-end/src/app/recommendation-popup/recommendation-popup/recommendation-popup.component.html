@@ -3,62 +3,129 @@
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">Welcome {{user_name}}! Please fill this short survey </p>
-        <button class="delete" aria-label="close"></button>
+        <button class="delete" aria-label="close" (click)="closeModal()"></button>
       </header>
       <section class="modal-card-body">
         <!-- Content ... -->
-        <table class="table is-striped">
-          <thead>
-            <tr>
-              <th>Event</th>
-              <th>1(less liked)</th>
-              <th>2</th>
-              <th>3</th>
-              <th>4</th>
-              <th>5(most liked)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                 <th>Birthday</th>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-                 <th>Holiday</th>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-                 <th>Picnic near the river</th>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-                 <th>Organize Trip to the north</th>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </tbody>
-          </table>
+      <div class="wrapper" id="modal-title-wrapper">
+        <div class="ratings-title">
+          <label> 1</label>
+          <label> 2</label>
+          <label> 3</label>
+          <label> 4</label>
+          <label> 5</label>
+        </div>
+
+
+      </div>
+      <div class="wrapper">
+        <label class="field">Surprize Birthday Party</label>
+        
+        <div class="control-1">
+          <label class="radio">
+            <input type="radio" name="1">
+          </label>
+          <label class="radio">
+            <input type="radio" name="1" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="1" checked>
+          </label>
+          <label class="radio">
+            <input type="radio" name="1" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="1" >
+          </label>
+        </div>
+
+      </div>
+      <div class="wrapper">
+        <label class="field">Picnic near the lake</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="2">
+          </label>
+          <label class="radio">
+            <input type="radio" name="2" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="2" checked>
+          </label>
+          <label class="radio">
+            <input type="radio" name="2" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="2" >
+          </label>
+        </div>
+
+      </div>
+      <div class="wrapper">
+        <label class="field">Organized Trip to the North</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="3">
+          </label>
+          <label class="radio">
+            <input type="radio" name="3" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="3"checked>
+          </label>
+          <label class="radio">
+            <input type="radio" name="3" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="3" >
+          </label>
+        </div>
+
+      </div>
+      <div class="wrapper">
+        <label class="field">Fun day at the sea</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="4">
+          </label>
+          <label class="radio">
+            <input type="radio" name="4" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="4"checked>
+          </label>
+          <label class="radio">
+            <input type="radio" name="4" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="4" >
+          </label>
+        </div>
+
+      </div>
+      <div class="wrapper">
+        <label class="field">New Years celebration indoors</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="5">
+          </label>
+          <label class="radio">
+            <input type="radio" name="5" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="5" checked>
+          </label>
+          <label class="radio">
+            <input type="radio" name="5" >
+          </label>
+          <label class="radio">
+            <input type="radio" name="5" >
+          </label>
+        </div>
+
+      </div>
+
+
 
       </section>
       <footer class="modal-card-foot">

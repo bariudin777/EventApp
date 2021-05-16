@@ -5,3 +5,16 @@ th{
     font-size: 19px;
     background: unset;
 }
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    font-family: fantasy;
+    padding: 1%;
+    flex-direction: row;
+    font-size: 20px;
+}
+#modal-title-wrapper{
+    justify-content:flex-end ;
+}
