@@ -41,6 +41,7 @@ import { BaseFormComponent } from './event/new-event/forms/base-form/base-form.c
 import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-form.component';
 import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/birthday-form.component';
 import { RecommendationPopupComponent } from './recommendation-popup/recommendation-popup/recommendation-popup.component';
+import { ModalRecommendationsComponent } from './event/new-event/form-modal/modal-recommendations/modal-recommendations.component';
 
 
 
@@ -60,6 +61,7 @@ import { RecommendationPopupComponent } from './recommendation-popup/recommendat
     SimpleFormComponent,
     BirthdayFormComponent,
     RecommendationPopupComponent,
+    ModalRecommendationsComponent,
   ],
   imports: [
     BrowserModule,
