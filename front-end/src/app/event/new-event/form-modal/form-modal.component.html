@@ -5,8 +5,13 @@
         <p class="modal-card-title">Event Forms</p>
         <button class="delete" aria-label="close" (click)="cancel()"></button>
       </header>
+      
+      <section>
+        <app-modal-recommendations id="recommendation-display"></app-modal-recommendations>
+      </section>
+
       <section class="modal-card-body">
-          
+
         <div class="select">
           <select name="selected" [(ngModel)]="selected">
             <option value="">Select a form</option>
@@ -26,6 +31,9 @@
         </div>
   
       </section>
+
+
+
       <footer class="modal-card-foot">
         <button class="button is-success" (click)="selectedItem()">Show Form</button>
         <button class="button" (click)="cancel()">Cancel</button>

@@ -31,3 +31,13 @@ body{
     left: 88%;
     margin-left: unset !important;
   }
+
+  #new-event-wrapper{
+    display: flex;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    justify-content: center;
+    /* width: 100%; */
+    padding: 20px;
+
+  }
