@@ -37,19 +37,7 @@ export class RecommendationPopupComponent implements OnInit {
     }
     modal.style.display = "none";
   }
-/**
- * Send recommendation to recommendation service to store at data base
- * 
- */
-  sendRecommendations(): void{
-    if (this.flag == 0) {
-      this.flag++
-      let element = document.querySelector('#recommendation-modal');
-      element?.setAttribute("style","display:none")
-    
-    }
 
-  }
 /**
  * Creates an dynamic list of labels list
  * @returns 
@@ -67,7 +55,12 @@ export class RecommendationPopupComponent implements OnInit {
      elem?.insertAdjacentHTML("afterbegin",wrapper)
   
 }
-
+/**
+ * Dynamiclly create recommendation for the pop up
+ * @param recommendation 
+ * @param options 
+ * @param name 
+ */
   createCommendations(recommendation: string, options: number[], name: number): void {
     const elem = document.getElementById("modal-title-wrapper");
     let recommendation_elem = `<div class="label-wrapper-rec" style="    display: flex;
@@ -83,10 +76,25 @@ export class RecommendationPopupComponent implements OnInit {
       recommendation_elem += radio_btns;
       recommendation_elem += '</div> </div>'
       elem?.insertAdjacentHTML("afterbegin",recommendation_elem)
-   
+  }
 
-
+/**
+ * Send recommendation to recommendation service to store at data base
+ * 
+ */
+  sendRecommendations(): void{
+   if (this.flag == 0) {
+    this.getRecommendations()
+    this.flag++
+    let element = document.querySelector('#recommendation-modal');
+    element?.setAttribute("style","display:none")
+  
+  }
 
 }
+  getRecommendations(): void{
+    debugger
+  }
 
-}
+
+} 
