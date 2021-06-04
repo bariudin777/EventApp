@@ -8,11 +8,11 @@ import { DataManagerService } from 'src/app/shared/data-manager.service';
 })
 export class RecommendationPopupComponent implements OnInit {
   public user_name: string | undefined;
+  private flag :number=0
   constructor(private data_manager:DataManagerService) { }
 
   ngOnInit(): void {
     this.data_manager.curr_user_name.subscribe(un => this.user_name = un);
-    
   }
 
 
@@ -24,5 +24,15 @@ export class RecommendationPopupComponent implements OnInit {
     modal.style.display = "none";
   }
 
+  sendRecommendations(): void{
+    if (this.flag == 0) {
+      this.flag++
+      let elem = document.querySelector('#recommendation-modal');
+      elem?.setAttribute("style","display:none")
+    
+    }
+      
 
+
+  }
 }
