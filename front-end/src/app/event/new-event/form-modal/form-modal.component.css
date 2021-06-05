@@ -3,3 +3,10 @@
     width: 100%;
     overflow: auto;
 }
+.modal-card-body{
+    overflow: unset;
+}
+#recommendation-info-icon{
+    width:20px;
+    margin-right: 3px;
+}

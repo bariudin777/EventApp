@@ -17,7 +17,6 @@ export class NewEmailService {
   constructor(private http: HttpClient) { }
 
   postMail(newMail: NewMail) {
-    console.log("in post method");
     return this.http.post(environment.apiBaseUrl+ '/new-mail',newMail,this.noAuthHeader);
   }
   

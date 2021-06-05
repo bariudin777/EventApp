@@ -28,7 +28,7 @@ body{
     width: 100%;
   }
   #select-form-btn{
-    left: 88%;
+    left: 32%;
     margin-left: unset !important;
   }
 
@@ -40,4 +40,7 @@ body{
     /* width: 100%; */
     padding: 20px;
 
+  }
+  #formContent > div > form > .mat-form-field{
+      width:85%;
   }

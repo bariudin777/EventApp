@@ -34,7 +34,10 @@ export class NewEventComponent implements OnInit {
   constructor(public newEventService:NewEventService,public emailService:NewEmailService,private router : Router) { }
 
   ngOnInit(): void { }
-
+  /**
+   * Add chip(emails)
+   * @param event 
+   */
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -57,12 +60,13 @@ export class NewEventComponent implements OnInit {
       this.emails.splice(index, 1);
     }
   }
-/**
- * fix the submission
- * @param form 
- */
 
-  onSubmit(form: NgForm) {
+/**
+ * Saves Data
+ * @param form
+ * Api call - using service
+ */
+  saveData(form: NgForm) {
     form.controls['members'].setValue(this.members)
 
     this.newEventService.postEvent(form.value).subscribe(
@@ -77,13 +81,19 @@ export class NewEventComponent implements OnInit {
           this.serverErrorMessages = err.error.join('<br/>');
         }
         else {
-          this.serverErrorMessages = 'Something went wrong.Please contact admin.';
+          this.serverErrorMessages = 'Something went wrong. Please contact admin.';
         }
 
       }
     );
-      //send emails
-    console.log("in on submit method and before postMail");
+}
+
+/**
+ * fix the submission
+ * @param form 
+ */
+  sendEmail(form: NgForm) {
+    form.controls['members'].setValue(this.members)
     this.emailService.postMail(form.value).subscribe(
       res => {
         console.log(res);
@@ -100,7 +110,11 @@ export class NewEventComponent implements OnInit {
 
     )
   }
-
+  
+/**
+ * Reset Form
+ * @param form 
+ */
   resetForm(form: NgForm) {
     this.newEventService.selectedEvent = {
       name: '',
@@ -109,24 +123,68 @@ export class NewEventComponent implements OnInit {
       message: ''
     }
   }
-
-  actionCenter(): void{
-    //TO FIX- navigate only if the form filament was completely finished
-    setTimeout(() => {
-      this.router.navigateByUrl('/event-center');
-    }, 2000);
-    
+  /**
+   * actionCenter
+   * @param form 
+   * Handles form creation
+   */
+  actionCenter(form:NgForm): void{
+    //if all input are filed and valid
+    if (this.validateInputs()) {
+      //TODO: make dialog for sucsses
+      this.sendEmail(form)
+      this.saveData(form)
+      setTimeout(() => {
+        this.router.navigateByUrl('/event-center');
+      }, 2000);
+      
+    }
+    else {
+      //TODO: make dialog for failure
+      alert("false")
+      
+    }
   }
-  
+  /**
+   * Click event
+   * when press on modal popup
+   */
   selectItem() {
     this.showModal = true;
-    console.log("in select item")
   }
-  
+  /**
+   * Click event
+   * @param selected 
+   * when user select event form
+   */
  selectedItem(selected:string) {
   this.showModal = false; // hide modal
-  if(selected) {
+   if (selected) {
     this.selected = selected;
   }
-}
+ }
+  
+  /**
+   * validateInputs
+   * @returns 
+   * validates form filament
+   */
+  validateInputs(): boolean{
+
+    //check if there is a name
+    if (this.newEventService.selectedEvent.name == "" || this.newEventService.selectedEvent.name == 'undefined') {
+      return false
+    }
+    //check if there is an email
+    else if (this.emails.length < 1) {
+      return false
+    }
+    //check if there is a form
+    else if (this.selected == null || this.selected=="") {
+      return false
+    }
+    else {
+      return true
+    }
+ }
 }

@@ -44,7 +44,6 @@ import { RecommendationPopupComponent } from './recommendation-popup/recommendat
 import { ModalRecommendationsComponent } from './event/new-event/form-modal/modal-recommendations/modal-recommendations.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +83,8 @@ import { ModalRecommendationsComponent } from './event/new-event/form-modal/moda
     MatAutocompleteModule,
     MatStepperModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
