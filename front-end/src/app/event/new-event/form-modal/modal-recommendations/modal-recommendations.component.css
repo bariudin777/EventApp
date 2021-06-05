@@ -1,13 +1,16 @@
 #recommendation-wrapper{
-    display:flex
+    display:flex;
+    align-items: flex-end;
 
     
 }
-#recommendation-wrapper>img{
-    padding: 5px;
- 
+label{
+    color: white;
 }
-#vacation-img{
-    width: 28%;
+.vacation-img{
+    width: 100%;
     border-radius: 10px;
+    min-width: 205px;
+    min-height: 154px;
+    padding: 5px;
 }

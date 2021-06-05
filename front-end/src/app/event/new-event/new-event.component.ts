@@ -83,14 +83,12 @@ export class NewEventComponent implements OnInit {
 }
 
 
-
-
 /**
  * fix the submission
  * @param form 
  */
   sendEmail(form: NgForm) {
-    console.log("in on submit method and before postMail");
+    debugger;
     this.emailService.postMail(form.value).subscribe(
       res => {
         console.log(res);
@@ -121,7 +119,6 @@ export class NewEventComponent implements OnInit {
     //if all input are filed and valid
     if (this.validateInputs()) {
       //TODO: make dialog for sucsses
-      debugger
       this.sendEmail(form)
       this.saveData(form)
       setTimeout(() => {
@@ -131,7 +128,6 @@ export class NewEventComponent implements OnInit {
     }
     else {
       //TODO: make dialog for failure
-      debugger
       alert("false")
       
     }

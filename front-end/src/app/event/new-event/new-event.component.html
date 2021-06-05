@@ -36,9 +36,6 @@
             <button id="select-form-btn" class="button is-link" (click)="selectItem()" (onClose)="showModal=false">Select Event Form</button>
             <app-form-modal *ngIf="showModal" (onClose)="selectedItem($event)"></app-form-modal>
           </div>
-
-
-
           <!--Event Message Input-->
           <label class="label">Message</label>
           <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.message" name="message" placeholder="Here you can write to participants"

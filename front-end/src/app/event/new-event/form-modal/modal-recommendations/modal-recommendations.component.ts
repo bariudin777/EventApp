@@ -10,6 +10,12 @@ export class ModalRecommendationsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+  displayForm(): void{
+  alert("display")
+}
+
 
 }
