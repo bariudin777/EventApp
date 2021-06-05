@@ -25,28 +25,26 @@
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                     [matChipInputAddOnBlur]="addOnBlur"
                     (matChipInputTokenEnd)="add($event)"
-                    type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Please enter participants mail"
+                    type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Emails"
                     [ngClass]="{'invalid-textbox' :newEventForm.submitted }">
             </mat-chip-list>
           </mat-form-field>
-          <!--Event Form Id Input-->
 
-            <label class="label">Event Form Selection</label>
+          <label class="label">Event Form Selection</label>
           <!-- <input type="text" > -->
           <div class="buttons">
-            <div #password="ngModel" [(ngModel)]="newEventService.selectedEvent.formID" name="formID" placeholder="Form ID"
-            minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
-              <button id="select-form-btn" class="button is-link" (click)="selectItem()" (onClose)="showModal=false">Select Event Form</button>
-            </div>
-            <p *ngIf="selected">Selected: {{ selected }}</p>
+            <button id="select-form-btn" class="button is-link" (click)="selectItem()" (onClose)="showModal=false">Select Event Form</button>
             <app-form-modal *ngIf="showModal" (onClose)="selectedItem($event)"></app-form-modal>
           </div>
+
+
+
           <!--Event Message Input-->
           <label class="label">Message</label>
           <input type="text" #password="ngModel" [(ngModel)]="newEventService.selectedEvent.message" name="message" placeholder="Here you can write to participants"
           minlength="4" required [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
 
-          <input type="submit" value="Send" (click)="actionCenter()">
+          <input type="submit" value="Send" (click)="actionCenter(newEventForm)">
         </form>
       </div>
     </div>

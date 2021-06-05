@@ -57,12 +57,10 @@ export class NewEventComponent implements OnInit {
       this.emails.splice(index, 1);
     }
   }
-/**
- * fix the submission
- * @param form 
- */
 
-  onSubmit(form: NgForm) {
+
+  saveData(form: NgForm) {
+    debugger
     form.controls['members'].setValue(this.members)
 
     this.newEventService.postEvent(form.value).subscribe(
@@ -77,12 +75,21 @@ export class NewEventComponent implements OnInit {
           this.serverErrorMessages = err.error.join('<br/>');
         }
         else {
-          this.serverErrorMessages = 'Something went wrong.Please contact admin.';
+          this.serverErrorMessages = 'Something went wrong. Please contact admin.';
         }
 
       }
     );
-      //send emails
+}
+
+
+
+
+/**
+ * fix the submission
+ * @param form 
+ */
+  sendEmail(form: NgForm) {
     console.log("in on submit method and before postMail");
     this.emailService.postMail(form.value).subscribe(
       res => {
@@ -110,11 +117,24 @@ export class NewEventComponent implements OnInit {
     }
   }
 
-  actionCenter(): void{
-    //TO FIX- navigate only if the form filament was completely finished
-    setTimeout(() => {
-      this.router.navigateByUrl('/event-center');
-    }, 2000);
+  actionCenter(form:NgForm): void{
+    //if all input are filed and valid
+    if (this.validateInputs()) {
+      //TODO: make dialog for sucsses
+      debugger
+      this.sendEmail(form)
+      this.saveData(form)
+      setTimeout(() => {
+        this.router.navigateByUrl('/event-center');
+      }, 2000);
+      
+    }
+    else {
+      //TODO: make dialog for failure
+      debugger
+      alert("false")
+      
+    }
     
   }
   
@@ -128,5 +148,18 @@ export class NewEventComponent implements OnInit {
   if(selected) {
     this.selected = selected;
   }
-}
+ }
+  
+  
+  validateInputs(): boolean{
+    //check if there is a name
+    if (this.newEventService.selectedEvent.name == "" || this.newEventService.selectedEvent.name == 'undefined') {
+      return false
+    }
+    //check if there is an email
+
+    //check if there is a form
+
+   return true
+ }
 }
