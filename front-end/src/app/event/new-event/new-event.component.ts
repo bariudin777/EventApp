@@ -34,7 +34,10 @@ export class NewEventComponent implements OnInit {
   constructor(public newEventService:NewEventService,public emailService:NewEmailService,private router : Router) { }
 
   ngOnInit(): void { }
-
+  /**
+   * Add chip(emails)
+   * @param event 
+   */
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -58,9 +61,12 @@ export class NewEventComponent implements OnInit {
     }
   }
 
-
+/**
+ * Saves Data
+ * @param form
+ * Api call - using service
+ */
   saveData(form: NgForm) {
-    debugger
     form.controls['members'].setValue(this.members)
 
     this.newEventService.postEvent(form.value).subscribe(
@@ -82,13 +88,12 @@ export class NewEventComponent implements OnInit {
     );
 }
 
-
 /**
  * fix the submission
  * @param form 
  */
   sendEmail(form: NgForm) {
-    debugger;
+    form.controls['members'].setValue(this.members)
     this.emailService.postMail(form.value).subscribe(
       res => {
         console.log(res);
@@ -105,7 +110,11 @@ export class NewEventComponent implements OnInit {
 
     )
   }
-
+  
+/**
+ * Reset Form
+ * @param form 
+ */
   resetForm(form: NgForm) {
     this.newEventService.selectedEvent = {
       name: '',
@@ -114,7 +123,11 @@ export class NewEventComponent implements OnInit {
       message: ''
     }
   }
-
+  /**
+   * actionCenter
+   * @param form 
+   * Handles form creation
+   */
   actionCenter(form:NgForm): void{
     //if all input are filed and valid
     if (this.validateInputs()) {
@@ -131,31 +144,47 @@ export class NewEventComponent implements OnInit {
       alert("false")
       
     }
-    
   }
-  
+  /**
+   * Click event
+   * when press on modal popup
+   */
   selectItem() {
     this.showModal = true;
-    console.log("in select item")
   }
-  
+  /**
+   * Click event
+   * @param selected 
+   * when user select event form
+   */
  selectedItem(selected:string) {
   this.showModal = false; // hide modal
-  if(selected) {
+   if (selected) {
     this.selected = selected;
   }
  }
   
-  
+  /**
+   * validateInputs
+   * @returns 
+   * validates form filament
+   */
   validateInputs(): boolean{
+
     //check if there is a name
     if (this.newEventService.selectedEvent.name == "" || this.newEventService.selectedEvent.name == 'undefined') {
       return false
     }
     //check if there is an email
-
+    else if (this.emails.length < 1) {
+      return false
+    }
     //check if there is a form
-
-   return true
+    else if (this.selected == null || this.selected=="") {
+      return false
+    }
+    else {
+      return true
+    }
  }
 }
