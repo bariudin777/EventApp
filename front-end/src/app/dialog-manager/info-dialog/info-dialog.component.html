@@ -1,15 +1,15 @@
-<div class="modal" id="myModal">
-  <div class="modal-background"></div>
+<div class="modal" id="info-modal" >
+  <div class="modal-background" (click)="cancel()"></div>
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close" data-bulma-modal="close"></button>
+      <button class="delete" aria-label="close" data-bulma-modal="close" (click)="cancel()"></button>
     </header>
     <section class="modal-card-body">
       <p>Info about </p>
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success">OK</button>
+      <button class="button is-success" (click)="displayForm">OK</button>
     </footer>
   </div>
 </div>

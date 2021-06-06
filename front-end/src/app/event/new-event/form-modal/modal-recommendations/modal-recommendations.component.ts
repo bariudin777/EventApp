@@ -9,24 +9,18 @@ import { InfoDialogComponent} from 'src/app/dialog-manager/info-dialog/info-dial
   styleUrls: ['./modal-recommendations.component.css']
 })
 export class ModalRecommendationsComponent implements OnInit {
-  public modal: any
-  public dialog:any
+   public dialog:any
 
   constructor() { }
 
   ngOnInit(): void {
-    this.dialog = document.getElementById("myModal")
+    this.dialog = document.getElementById("info-modal")
     
   }
 
-  displayForm(): void{
+  displayForm(): void {
     this.dialog.className += " is-active"
-    const other_modals = document.getElementById("select-form-btn")
-    if (other_modals != null) {
-      other_modals.className = "modal"
-    }
 
   }
-
 
 }
