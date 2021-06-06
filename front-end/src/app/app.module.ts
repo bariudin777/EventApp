@@ -26,7 +26,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
@@ -42,6 +42,7 @@ import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-
 import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/birthday-form.component';
 import { RecommendationPopupComponent } from './recommendation-popup/recommendation-popup/recommendation-popup.component';
 import { ModalRecommendationsComponent } from './event/new-event/form-modal/modal-recommendations/modal-recommendations.component';
+import { InfoDialogComponent } from './dialog-manager/info-dialog/info-dialog.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { ModalRecommendationsComponent } from './event/new-event/form-modal/moda
     BirthdayFormComponent,
     RecommendationPopupComponent,
     ModalRecommendationsComponent,
+    InfoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +86,7 @@ import { ModalRecommendationsComponent } from './event/new-event/form-modal/moda
     MatStepperModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatDialogModule,
 
   ],
   providers: [{

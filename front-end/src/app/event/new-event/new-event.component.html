@@ -25,7 +25,7 @@
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                     [matChipInputAddOnBlur]="addOnBlur"
                     (matChipInputTokenEnd)="add($event)"
-                    type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" placeholder="Emails"
+                    type="text" #email="ngModel" [(ngModel)]="newEventService.selectedEvent.members" name="members" 
                     [ngClass]="{'invalid-textbox' :newEventForm.submitted }">
             </mat-chip-list>
           </mat-form-field>
