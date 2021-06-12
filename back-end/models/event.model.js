@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-var eventFormSchema = new mongoose.Schema({
+var eventSchema = new mongoose.Schema({
     name: {
         type: String,
         required: 'Event name can\'t be empty'
@@ -24,4 +24,4 @@ var eventFormSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Event', eventFormSchema);
+mongoose.model('Event', eventSchema);

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ctrlUser = require('../controllers/user.controller');
 const ctrlEvent = require('../controllers/event.controller');
+// const ctrlEventForms = require('../controllers/event.form.controller');
 const cors = require('./cors');
 const nodemailer = require('nodemailer');
 const jwtHelper = require('../config/jwtHelper');
@@ -10,6 +11,7 @@ router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
 router.get('/home',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 router.post('/new-event', ctrlEvent.save)
+// router.post('/insert-new-form',ctrlEventForms.saveNew)
 
 router.route('/new-mail')
     .options(cors.cors, (req, res) => {
@@ -36,11 +38,7 @@ router.route('/new-mail')
             Please fill the following form:  
             http://localhost:4200/simple-form
             It is important to know that:`,
-            // attachments: [
-            //     {
-            //         filename: 'vacation.jpeg',
-            //         path: '../../front-end/src/assets/img/vacation.jpeg',
-            //     }]
+
         };
         mailOptions.text += req.body.message
         transporter.sendMail(mailOptions, function (err, info) {

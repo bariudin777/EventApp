@@ -1,0 +1,11 @@
+{
+    "formId": 1,
+    "formName": "basic birthday party",
+    "location": "Tel-Aviv : Gordon Beach",
+    "avgSpending":500,
+    "eventDuration": 0.5,
+    "images": null,
+    "peopleRecommendation": "David: Best birthday party ever",
+    "formUrl": "http://localhost:4200/basic-form"
+
+}
