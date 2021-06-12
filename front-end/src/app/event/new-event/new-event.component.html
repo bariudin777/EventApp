@@ -4,14 +4,12 @@
     <div class="field is-horizontal" id="formContent">
       <div class="field-body">
         <!--Event Form Creation-->
-        <!--(ngSubmit)="onSubmit(newEventForm)" creates a bug of sending -->
         <form #newEventForm="ngForm" >
           <!--Event Name Input-->
           <label class="label"> Event Name</label>
           <input type="text" #name="ngModel" [(ngModel)]="newEventService.selectedEvent.name" name="name" placeholder="Event Name"
           required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
           <!--Here i insert chip material-->
-
           <!--Event Members Input-->
           <mat-label class="label">Members Email</mat-label>
           <mat-form-field class="example-chip-list">
@@ -33,7 +31,11 @@
           <label class="label">Event Form Selection</label>
           <!-- <input type="text" > -->
           <div class="buttons">
-            <button id="select-form-btn" class="button is-link" (click)="selectItem()" (onClose)="showModal=false">Select Event Form</button>
+
+            <button id="select-form-btn" #formID="ngModel" 
+            [(ngModel)]="newEventService.selectedEvent.formID" class="button is-link"
+             (click)="selectItem()" name="formID" (onClose)="showModal=false">Select Event Form</button>
+
             <app-form-modal *ngIf="showModal" (onClose)="selectedItem($event)"></app-form-modal>
           </div>
           <!--Event Message Input-->
