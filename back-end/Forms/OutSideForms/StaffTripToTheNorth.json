@@ -1,0 +1,11 @@
+{
+    "formId": 4,
+    "formName": "Staff celebration Trip to the north",
+    "location": "Haifa : Old city",
+    "avgSpending":500,
+    "eventDuration": 5,
+    "images": null,
+    "peopleRecommendation": "Coral: Nice and Easy:)!",
+    "formUrl": "http://localhost:4200/basic-form"
+
+}
