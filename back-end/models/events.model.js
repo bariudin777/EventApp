@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-var eventFormSchema = new mongoose.Schema({
+var eventSchema = new mongoose.Schema({
     name: {
         type: String,
         required: 'Event name can\'t be empty'
@@ -11,17 +11,13 @@ var eventFormSchema = new mongoose.Schema({
         required:'Must enter at least one member'
     },
     formID: {
-        type: String,
-        unique: false
-    },
-    timeBase: {
-        type: String,
+        type: Number,
         unique: true
     },
-    messageForUsers: {
+    message: {
         type: String,
         required: ' message cannot be empty'
     }
 });
 
-mongoose.model('Event', eventFormSchema);
+mongoose.model('Event', eventSchema);

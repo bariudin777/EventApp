@@ -6,10 +6,11 @@
       <button class="delete" aria-label="close" data-bulma-modal="close" (click)="cancel()"></button>
     </header>
     <section class="modal-card-body">
-      <p>Info about </p>
+      <h1>{{description}} </h1>
+      <p>{{users_recommendations}}</p>
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success" (click)="displayForm">OK</button>
+      <button class="button is-success" (click)="displayForm">Display Form</button>
     </footer>
   </div>
 </div>

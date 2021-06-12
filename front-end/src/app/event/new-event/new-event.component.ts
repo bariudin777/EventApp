@@ -60,7 +60,6 @@ export class NewEventComponent implements OnInit {
       this.emails.splice(index, 1);
     }
   }
-
 /**
  * Saves Data
  * @param form
@@ -68,7 +67,9 @@ export class NewEventComponent implements OnInit {
  */
   saveData(form: NgForm) {
     form.controls['members'].setValue(this.members)
+    form.controls['formID'].setValue(Math.random());
 
+    debugger
     this.newEventService.postEvent(form.value).subscribe(
       res => {
         this.showSuccessMessage = true;
