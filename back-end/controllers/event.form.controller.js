@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const _ = require('lodash');
-const Event = mongoose.model('EventForm');
+const Event = mongoose.model('Event');
 const fs = require('fs');
-const forms = require('../Forms/BirthDayForms/basic-birthday-party.json')
+// const forms = require('../Forms/BirthDayForms/basic-birthday-party.json')
 
 
 //get from data by form id
 module.exports.getFormData = (req, res, next) => {
-    Event.findOne({ _id: req._id },
+    Event.findOne({ formID: 1 },
         (err, event) => {
             if (!user)
                 return res.status(404).json({ status: false, message: 'Event record not found.' });
@@ -50,15 +50,15 @@ module.exports.getFormUrl = (req, res, next) => {
 
 
 //save - to make when admin config is added
-module.exports.saveNew = (req, res, next) => {
-    var event = new Event();
-    json_file = JSON.parse(fs.readFileSync(forms))
-    event.save((err, json_file) => {
-        if (!err) {
-            res.send(json_file)
-        }
-        else {
-            return next(err);
-        }
-    });
-}
+// module.exports.saveNew = (req, res, next) => {
+//     var event = new Event();
+//     json_file = JSON.parse(fs.readFileSync(forms))
+//     event.save((err, json_file) => {
+//         if (!err) {
+//             res.send(json_file)
+//         }
+//         else {
+//             return next(err);
+//         }
+//     });
+// }
