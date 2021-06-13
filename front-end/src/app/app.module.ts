@@ -43,6 +43,7 @@ import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/bir
 import { RecommendationPopupComponent } from './recommendation-popup/recommendation-popup/recommendation-popup.component';
 import { ModalRecommendationsComponent } from './event/new-event/form-modal/modal-recommendations/modal-recommendations.component';
 import { InfoDialogComponent } from './dialog-manager/info-dialog/info-dialog.component';
+import { AboutComponent } from './home/home-page-utils/about/about.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { InfoDialogComponent } from './dialog-manager/info-dialog/info-dialog.co
     RecommendationPopupComponent,
     ModalRecommendationsComponent,
     InfoDialogComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
