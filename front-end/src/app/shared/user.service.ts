@@ -29,7 +29,6 @@ export class UserService {
   }
 
   getUserProfile() {
-    console.log(environment.apiBaseUrl)
     return this.http.get(environment.apiBaseUrl + '/home');
   }
 
