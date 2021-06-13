@@ -23,7 +23,7 @@ export class FormManagerService {
 
   constructor(private http: HttpClient) { }
 
-  getFormData(formID:string) {
-    return this.http.get(environment.apiBaseUrl + '/get-form-data-by-id/'+formID);
+  getFormData(formID: string) {
+    return this.http.get(environment.apiBaseUrl + '/get-form-data-by-id/formID=' + formID);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit,EventEmitter,Output,Input } from '@angular/core';
-
+import { FormManagerService } from 'src/app/shared/form-manager.service';
 @Component({
   selector: 'app-info-dialog',
   templateUrl: './info-dialog.component.html',
@@ -9,9 +9,12 @@ export class InfoDialogComponent implements OnInit {
   private dialog: any
   public description: string | undefined;
   public users_recommendations: string|undefined;
-  constructor() { }
-
+  constructor(public forms_service:FormManagerService) { }
+    
   ngOnInit(): void {
+    debugger
+    const form = this.forms_service.getFormData("1");
+
     this.dialog = document.getElementById("info-modal")
     //get the recommendation from api
     this.description = `Trip to Eilat: 
@@ -30,6 +33,6 @@ export class InfoDialogComponent implements OnInit {
   }
   displayForm(): void{
     //download form with : https://stackoverflow.com/questions/61203930/how-to-export-data-table-to-pdf-using-angular-material
-    
+     
   }
 }

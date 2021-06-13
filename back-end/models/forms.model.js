@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-var eventFormSchema = new mongoose.Schema({
+var FormsSchema = new mongoose.Schema({
     formId: {
         type: String,
         required: 'Event Form id can\'t be empty'
@@ -35,4 +35,4 @@ var eventFormSchema = new mongoose.Schema({
 
 });
 
-mongoose.model('Event', eventFormSchema);
+mongoose.model('Forms', FormsSchema);
