@@ -12,4 +12,8 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openWeb() {
+    window.open("https://jamieturner.live/37-key-facts-for-meeting-planners-conference-planners-event-planners/")
+  }
+
 }
