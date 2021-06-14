@@ -6,25 +6,12 @@ background: url("/assets/img/kalen-emsley-7bwQXzbF6KE-unsplash.jpg");
 background-size: cover;
 -o-background-size: cover;
 }
-#action-center-container{
-  position: absolute;
-  top: 10%;
-  margin-top: 1%;
-}
+
 #new-event-container{
   position: absolute;
   top: 10%;
   left: 85%;
   margin: 10px;
-}
-
-#button1{
-  width: 100%;
-
-}
-#button2{
-width: 100%;
-        
 }
 header {
     position: relative;
@@ -76,4 +63,124 @@ header {
   }
 
 
-  
+
+/* Buttons css*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
+:root {
+  background: -webkit-linear-gradient(top, #222838 0%, #131621 100%);
+  height: 100vh;
+}
+
+.container {
+  width: 334px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body
+{
+  background:#333;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h1, h2 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #24E2B8;
+}
+
+.home-btn {
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  padding: 20px 50px 20px 70px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+.home-btn:hover {
+  background-position: 0% 30%;
+}
+.home-btn:hover:after{
+  right: -40px;
+  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.home-btn:before,  .home-btn:after {
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+}
+.home-btn:before{
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 30px;
+  left: 25px;
+  top: 19px;
+}
+.home-btn:after {
+  -webkit-transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, transform .2s;
+  transition: right .4s, transform .2s, -webkit-transform .2s;
+  font-size: 100px;
+  opacity: .3;
+  right: -120px;
+  top: -17px;
+}
+
+
+
+
+.home-btn {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #DE3964;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#DE3964), to(rgba(154, 40, 87, 0.24))), url("http://nightlifeassociates.com/wp-content/uploads/2014/03/hakkasan-nightclub_tiesto-smalls.jpg");
+  background-image: linear-gradient(to bottom, #DE3964, rgba(154, 40, 87, 0.24)), url("http://nightlifeassociates.com/wp-content/uploads/2014/03/hakkasan-nightclub_tiesto-smalls.jpg");
+}
+.home-btn:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #DE3964;
+}
+.home-bt:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.home-btn:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+/* .home-btn:after, .home-btn:before {
+  content: "";
+} */
+.home-btn b {
+  color: #F764FF;
+  font-weight: 700;
+}

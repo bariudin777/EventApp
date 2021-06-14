@@ -12,18 +12,10 @@
       <div class="w-100 text-white">
         <div class="field is-grouped">
 
-          <div id="action-center-container" class="control">
-            <button class="button is-link" (click)="goToActionCenter()" id="button1">
-              Action Center
-            </button>
+          <div class='container'>
+              <button class='home-btn' (click)="goToActionCenter()">Action <b>Center</b></button>
+              <button class='home-btn' (click)="goToNewEvent()">Create New <b>Form</b></button>
           </div>
-
-          <div id="new-event-container" class="control">
-            <button class="button is-danger" (click)="goToNewEvent()" id="button2">
-              Create New Event
-            </button>
-          </div>
-
         </div>
       </div>
     </div>
