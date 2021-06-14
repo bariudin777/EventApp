@@ -17,6 +17,7 @@ export class SimpleFormComponent implements OnInit {
  
   
   ngAfterViewInit() {
+    
     switch (this.form_type) {
       case "basic-option":
         console.log("in basic");

@@ -1,5 +1,7 @@
 import { Component, OnInit,EventEmitter,Output,Input } from '@angular/core';
 import { FormManagerService } from 'src/app/shared/form-manager.service';
+import jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 @Component({
   selector: 'app-info-dialog',
   templateUrl: './info-dialog.component.html',
@@ -34,5 +36,22 @@ export class InfoDialogComponent implements OnInit {
   displayForm(): void{
     //download form with : https://stackoverflow.com/questions/61203930/how-to-export-data-table-to-pdf-using-angular-material
      
+  }
+
+  submitForm(): void{
+    
+  }
+  downloadForm(): void{
+    let element = document.getElementById("info-modal")
+    if (element) {
+      html2canvas(element).then((canvas) => {
+        console.log(canvas);
+        let img_data = canvas.toDataURL('image/png');
+        let doc = new jspdf()
+        doc.addImage(img_data, 0, 0, 208, 500)
+        doc.save('image.pdf')
+      })
+    }
+
   }
 }
