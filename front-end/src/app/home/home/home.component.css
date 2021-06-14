@@ -75,16 +75,5 @@ header {
     }
   }
 
-  #about-container{
-    display: block;
-    position: absolute;
-    border-color: black;
-    background: #c8f0fd;
-    left: 3%;
-    width: 31%;
-    height: 300px;
-    /* top: 131%; */
-    top: 120%;
-    border-radius: 10px;
-  }
+
   
