@@ -1,0 +1,11 @@
+{
+    "formId": 3,
+    "formName": "David City organize trip",
+    "location": "Jerusalem: Old City",
+    "avgSpending":250,
+    "eventDuration": 12,
+    "images": null,
+    "peopleRecommendation": "Nahum: Very professional crew- interesting and satisfying trip",
+    "formUrl": "http://localhost:4200/basic-form"
+
+}

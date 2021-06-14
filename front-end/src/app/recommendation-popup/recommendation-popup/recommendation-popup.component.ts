@@ -9,11 +9,9 @@ import { DataManagerService } from 'src/app/shared/data-manager.service';
 })
 export class RecommendationPopupComponent implements OnInit {
   public user_name: string | undefined;
-  private flag: number = 0
   constructor(private data_manager:DataManagerService,) { }
 
   ngOnInit(): void {
-    
     this.data_manager.curr_user_name.subscribe(un => this.user_name = un);
     const options = [1, 2, 3, 4, 5];
     this.createCommendations("Surprise Birth-Day Party", options, 1)
@@ -70,7 +68,7 @@ export class RecommendationPopupComponent implements OnInit {
     let radio_btns = ""
     for (let i in options) {
         radio_btns += `<label class="radio">
-                        <input type="radio" name="${name}">
+                        <input type="radio" name="${name}" >
                        </label>`
       }
       recommendation_elem += radio_btns;
@@ -83,17 +81,18 @@ export class RecommendationPopupComponent implements OnInit {
  * 
  */
   sendRecommendations(): void{
-   if (this.flag == 0) {
+
+    debugger
     this.getRecommendations()
-    this.flag++
     let element = document.querySelector('#recommendation-modal');
     element?.setAttribute("style","display:none")
   
-  }
+
 
 }
   getRecommendations(): void{
-    debugger
+
+
   }
 
 

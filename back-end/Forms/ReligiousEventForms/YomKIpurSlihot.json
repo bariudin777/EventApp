@@ -1,0 +1,11 @@
+{
+    "formId": 5,
+    "formName": "Slihot at Yom-Kipur",
+    "location": "Jerusalem : Old City",
+    "avgSpending":500,
+    "eventDuration": 0.5,
+    "images": null,
+    "peopleRecommendation": "David:waf very powerful and emotional",
+    "formUrl": "http://localhost:4200/basic-form"
+
+}

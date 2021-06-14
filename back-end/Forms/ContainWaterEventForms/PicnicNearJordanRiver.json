@@ -1,0 +1,11 @@
+{
+    "formId": 2,
+    "formName": "Picnic near Jordan river",
+    "location": "Jordan River : Jordan Park ",
+    "avgSpending":400,
+    "eventDuration": 1,
+    "images": null,
+    "peopleRecommendation": "Yossi: Nice and easy picnic- works for families",
+    "formUrl": "http://localhost:4200/basic-form"
+
+}
