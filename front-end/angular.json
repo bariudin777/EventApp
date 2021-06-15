@@ -30,6 +30,8 @@
             "styles": [
               "node_modules/bulma/css/bulma.css",
               "src/styles.css"
+             
+
             ],
             "scripts": []
           },

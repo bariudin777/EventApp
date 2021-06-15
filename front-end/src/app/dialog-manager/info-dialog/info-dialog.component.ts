@@ -1,7 +1,6 @@
 import { Component, OnInit,EventEmitter,Output,Input } from '@angular/core';
 import { FormManagerService } from 'src/app/shared/form-manager.service';
-import jspdf from 'jspdf';
-import html2canvas from 'html2canvas';
+
 @Component({
   selector: 'app-info-dialog',
   templateUrl: './info-dialog.component.html',
@@ -14,7 +13,6 @@ export class InfoDialogComponent implements OnInit {
   constructor(public forms_service:FormManagerService) { }
     
   ngOnInit(): void {
-    debugger
     const form = this.forms_service.getFormData("1");
 
     this.dialog = document.getElementById("info-modal")
@@ -42,16 +40,7 @@ export class InfoDialogComponent implements OnInit {
     
   }
   downloadForm(): void{
-    let element = document.getElementById("info-modal")
-    if (element) {
-      html2canvas(element).then((canvas) => {
-        console.log(canvas);
-        let img_data = canvas.toDataURL('image/png');
-        let doc = new jspdf()
-        doc.addImage(img_data, 0, 0, 208, 500)
-        doc.save('image.pdf')
-      })
-    }
+
 
   }
 }
