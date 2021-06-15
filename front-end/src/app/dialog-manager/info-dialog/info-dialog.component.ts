@@ -1,4 +1,5 @@
 import { Component, OnInit,EventEmitter,Output,Input } from '@angular/core';
+import { DownloadFormService } from 'src/app/shared/download-form.service';
 import { FormManagerService } from 'src/app/shared/form-manager.service';
 
 @Component({
@@ -10,8 +11,9 @@ export class InfoDialogComponent implements OnInit {
   private dialog: any
   public description: string | undefined;
   public users_recommendations: string|undefined;
-  constructor(public forms_service:FormManagerService) { }
-    
+  public dispalyVar:string="none"
+  constructor(public forms_service: FormManagerService, public pdf_service: DownloadFormService) { }
+  
   ngOnInit(): void {
     const form = this.forms_service.getFormData("1");
 
@@ -32,15 +34,17 @@ export class InfoDialogComponent implements OnInit {
     this.dialog.className= "modal"
   }
   displayForm(): void{
-    //download form with : https://stackoverflow.com/questions/61203930/how-to-export-data-table-to-pdf-using-angular-material
-     
+     //get the form id and display it 
+    this.dispalyVar="block"
+
   }
 
   submitForm(): void{
     
   }
   downloadForm(): void{
-
+    var t = "assets/files/forms/Capture-converted.pdf"
+    this.pdf_service.downloadPdfFromFolder("sd")
 
   }
 }
