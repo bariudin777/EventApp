@@ -45,11 +45,6 @@ export const appRoutes: Routes = [
         
     },
     
-    // {
-    //     path:'simple-form',component:SimpleFormComponent
-        
-    // },
-
     {
         path:'new-mail',redirectTo:'/home',pathMatch:'full'
         

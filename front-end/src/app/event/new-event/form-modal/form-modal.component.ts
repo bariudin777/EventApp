@@ -35,11 +35,11 @@ export class FormModalComponent implements OnInit {
       this.router.navigateByUrl('/simple-form');
     }
     else if (this.selected == "organize-form") {
-      this.data_manager.sendFormId("organize-form")
+      this.data_manager.sendFormId("organize-option")
       this.router.navigateByUrl('/organize-form');
     }
     else if (this.selected == "picnic-form") {
-      this.data_manager.sendFormId("picnic-form");
+      this.data_manager.sendFormId("picnic-option");
       this.router.navigateByUrl('/picnic-form');
     }
     else {
