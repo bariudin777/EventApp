@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-organize-trip-form',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./organize-trip-form.component.css']
 })
 export class OrganizeTripFormComponent implements OnInit {
-
+  @Input() modelGroupName: string | undefined;
   constructor() { }
 
   ngOnInit(): void {
