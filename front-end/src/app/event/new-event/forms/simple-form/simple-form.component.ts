@@ -28,8 +28,8 @@ export class SimpleFormComponent implements OnInit {
       case "organize-option":
         this.flag='organize-option'
       break;
-      case "picnic-form":
-        this.flag='picnic-form'
+      case "picnic-option":
+        this.flag='picnic-option'
         break;
     
     }

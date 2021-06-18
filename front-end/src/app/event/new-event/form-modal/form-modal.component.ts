@@ -34,13 +34,13 @@ export class FormModalComponent implements OnInit {
       this.data_manager.sendFormId("birth-day-option")
       this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "organize-form") {
+    else if (this.selected == "organize-option") {
       this.data_manager.sendFormId("organize-option")
-      this.router.navigateByUrl('/organize-form');
+      this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "picnic-form") {
+    else if (this.selected == "picnic-option") {
       this.data_manager.sendFormId("picnic-option");
-      this.router.navigateByUrl('/picnic-form');
+      this.router.navigateByUrl('/simple-form');
     }
     else {
       this.data_manager.sendFormId("basic-option")

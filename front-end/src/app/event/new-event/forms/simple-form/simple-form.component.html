@@ -18,13 +18,13 @@
             <ng-template matStepLabel>BirthDay</ng-template>
             <app-birthday-form modelGroupName="app-birthday-form"></app-birthday-form>
           </mat-step>
-          <mat-step *ngIf="flag==='organize-option'" #birthday="ngModelGroup" ngModelGroup="organize" [completed]="birthday.valid">
+          <mat-step *ngIf="flag==='organize-option'" #organize="ngModelGroup" ngModelGroup="organize" [completed]="organize.valid">
             <ng-template matStepLabel>Organize</ng-template>
-            <app-organize-trip-form modelGroupName="app-birthday-form"></app-organize-trip-form>
+            <app-organize-trip-form modelGroupName="app-organize-trip-form"></app-organize-trip-form>
           </mat-step>
-          <mat-step *ngIf="flag==='picnic-form'" #birthday="ngModelGroup" ngModelGroup="picnic" [completed]="birthday.valid">
+          <mat-step *ngIf="flag==='picnic-option'" #picnic="ngModelGroup" ngModelGroup="picnic" [completed]="picnic.valid">
             <ng-template matStepLabel>Picnic</ng-template>
-            <app-picnic-form modelGroupName="app-birthday-form"></app-picnic-form>
+            <app-picnic-form modelGroupName="app-picnic-form"></app-picnic-form>
           </mat-step>
 
           <!--All Done-->
