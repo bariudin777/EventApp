@@ -44,6 +44,8 @@ import { RecommendationPopupComponent } from './recommendation-popup/recommendat
 import { ModalRecommendationsComponent } from './event/new-event/form-modal/modal-recommendations/modal-recommendations.component';
 import { InfoDialogComponent } from './dialog-manager/info-dialog/info-dialog.component';
 import { AboutComponent } from './home/home-page-utils/about/about.component';
+import { PicnicFormComponent } from './event/new-event/forms/picnic-form/picnic-form.component';
+import { OrganizeTripFormComponent } from './event/new-event/forms/organize-trip-form/organize-trip-form.component';
 
 
 @NgModule({
@@ -65,6 +67,8 @@ import { AboutComponent } from './home/home-page-utils/about/about.component';
     ModalRecommendationsComponent,
     InfoDialogComponent,
     AboutComponent,
+    PicnicFormComponent,
+    OrganizeTripFormComponent,
   ],
   imports: [
     BrowserModule,
