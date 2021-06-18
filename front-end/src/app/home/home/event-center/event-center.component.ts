@@ -10,6 +10,8 @@ export class EventCenterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  
 }
