@@ -25,10 +25,8 @@ public form_display_id:string="basic-form"
     }
   }
 
-  downloadPdfFromFolder(url: string) {
-    const pdfUrl = './assets/files/forms/Capture-converted.pdf';
-    const pdfName = 'Capture-converted.pdf';
-    FileSaver.saveAs(pdfUrl, pdfName);
+  downloadPdfFromFolder(url: string,name:string) {
+    FileSaver.saveAs(url, name);
 
 }
 

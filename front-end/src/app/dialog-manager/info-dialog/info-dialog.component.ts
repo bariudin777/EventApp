@@ -43,8 +43,9 @@ export class InfoDialogComponent implements OnInit {
     
   }
   downloadForm(): void{
-    var t = "assets/files/forms/Capture-converted.pdf"
-    this.pdf_service.downloadPdfFromFolder("sd")
+    const url = "assets/files/forms/basic-form.pdf"
+    const name = "basic-form"
+    this.pdf_service.downloadPdfFromFolder(url,name)
 
   }
 }
