@@ -21,6 +21,10 @@ export class FormModalComponent implements OnInit {
   }
   cancel() { this.onClose.emit(null); }
   
+  /**
+   * selectedItem
+   * selecting the type of the form
+   */
   selectedItem() {
     if (this.selected == "basic-option") {
       this.data_manager.sendFormId("basic-option")
@@ -30,18 +34,17 @@ export class FormModalComponent implements OnInit {
       this.data_manager.sendFormId("birth-day-option")
       this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "organize-form") {
-      
-      this.data_manager.sendFormId("basic-option")
+    else if (this.selected == "organize-option") {
+      this.data_manager.sendFormId("organize-option")
+      this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "picnic-form") {
-      this.data_manager.sendFormId("basic-option")
-    }
-    else if (this.selected == "simple form") {
-      this.data_manager.sendFormId("basic-option")
+    else if (this.selected == "picnic-option") {
+      this.data_manager.sendFormId("picnic-option");
+      this.router.navigateByUrl('/simple-form');
     }
     else {
-      
+      this.data_manager.sendFormId("basic-option")
+      this.router.navigateByUrl('/simple-form');
     }
     this.onClose.emit(this.selected)
   }

@@ -1,0 +1,61 @@
+
+
+<div ngModelGroup="{{modelGroupName}}">
+
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+        <mat-form-field fxFlex="45">
+            <input matInput placeholder="How much money you willing to invest" name="money" ngModel i18n-placeholder required type="number" min="0">
+        </mat-form-field>
+    </div>
+  
+</div>
+  
+  <div ngModelGroup="{{modelGroupName}}">
+  
+        <!--Prefer Locations-->
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="30px">
+          <mat-label ngModel i18n>Prefer Locations:</mat-label>
+          <mat-checkbox value="Nature" i18n name="Nature" ngModel>Nature</mat-checkbox>
+          <mat-checkbox value="Modern City" name="Modern City" ngModel i18n>Modern City</mat-checkbox>
+          <mat-checkbox value="Old City's"  name="Old City's" ngModel i18n>Old City's</mat-checkbox>
+          <mat-checkbox value="Museums" name="Museums" ngModel i18n>Museums</mat-checkbox>
+          <mat-checkbox value="Involve water trips" name="Involve water trips" ngModel i18n>Involve water trips</mat-checkbox>
+        </div>
+  </div>
+  
+  
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+  
+      <mat-form-field fxFlex="20" i18n-placeholder required>
+          <mat-label i18n>Preferred Area</mat-label >
+              <mat-select name="Preferred Area " ngModel required>
+                  <mat-option value="Center Area" i18n>Center Area</mat-option>
+                  <mat-option value="South Area" i18n>South Area</mat-option>
+                  <mat-option value="North Area" i18n>North Area</mat-option>
+          </mat-select>
+        </mat-form-field>
+  </div>
+  
+  <div ngModelGroup="{{modelGroupName}}">
+  
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+  
+        <mat-form-field fxFlex="20">
+            <input matInput [matDatepicker]="picker" placeholder="Prefer Date" name="preferDate" ngModel i18n-placeholder required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+    </div>
+  
+
+
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+            <mat-form-field fxFlex="45">
+                <input matInput placeholder="Free Text" name="free-text" ngModel i18n-placeholder >
+            </mat-form-field>
+        </div>
+      
+
+   
+  </div>

@@ -23,8 +23,15 @@ export class SimpleFormComponent implements OnInit {
         console.log("in basic");
         break;
       case "birth-day-option":
-        this.flag='birth-day'
+        this.flag='birth-day-option'
         break;
+      case "organize-option":
+        this.flag='organize-option'
+      break;
+      case "picnic-option":
+        this.flag='picnic-option'
+        break;
+    
     }
     
   }
