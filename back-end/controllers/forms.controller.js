@@ -8,10 +8,10 @@
 
 // //get from data by form id
 // module.exports.getFormData = (req, res, next) => {
-//     Forms.findOne({ formID: req.formID },
+//     Forms.findOne({ formName: req.formName },
 //         (err, event) => {
 //             if (!user) {
-//                 console.log(req.formID)
+//                 console.log(req.formName)
 //                 return res.status(404).json({ status: false, message: 'Event record not found.' });
 //             }
 //             else

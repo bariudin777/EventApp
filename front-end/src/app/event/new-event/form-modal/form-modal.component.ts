@@ -24,27 +24,29 @@ export class FormModalComponent implements OnInit {
   /**
    * selectedItem
    * selecting the type of the form
+   * send data to new-event
    */
+
   selectedItem() {
     if (this.selected == "basic-option") {
-      this.data_manager.sendFormId("basic-option")
-      this.router.navigateByUrl('/simple-form');
+      this.data_manager.sendFormId("simple-form")
+      // this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "birth-day-option") {
-      this.data_manager.sendFormId("birth-day-option")
-      this.router.navigateByUrl('/simple-form');
+    else if (this.selected == "birthday-form") {
+      this.data_manager.sendFormId("birthday-form")
+      // this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "organize-option") {
-      this.data_manager.sendFormId("organize-option")
-      this.router.navigateByUrl('/simple-form');
+    else if (this.selected == "organize-form") {
+      this.data_manager.sendFormId("organize-form")
+      // this.router.navigateByUrl('/simple-form');
     }
-    else if (this.selected == "picnic-option") {
+    else if (this.selected == "picnic-form") {
       this.data_manager.sendFormId("picnic-option");
-      this.router.navigateByUrl('/simple-form');
+      // this.router.navigateByUrl('/simple-form');
     }
     else {
-      this.data_manager.sendFormId("basic-option")
-      this.router.navigateByUrl('/simple-form');
+      this.data_manager.sendFormId("simple-form")
+      // this.router.navigateByUrl('/simple-form');
     }
     this.onClose.emit(this.selected)
   }

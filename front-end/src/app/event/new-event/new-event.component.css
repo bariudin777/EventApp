@@ -23,21 +23,22 @@ body{
       margin-left: 130px;
       
   }
-
+.form-input-display{
+  display: flex;
+  align-items: center;
+}
   .example-chip-list {
     width: 100%;
   }
   #select-form-btn{
-    left: 32%;
     margin-left: unset !important;
+    height: 55px;
   }
 
   #new-event-wrapper{
     display: flex;
-    /* align-items: center; */
-    /* flex-direction: column; */
+
     justify-content: center;
-    /* width: 100%; */
     padding: 20px;
 
   }
