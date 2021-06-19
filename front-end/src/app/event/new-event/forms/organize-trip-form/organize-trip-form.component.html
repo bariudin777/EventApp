@@ -4,11 +4,11 @@
 
     <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
         <mat-form-field fxFlex="45">
-            <input matInput placeholder="How much money you willing to invest" name="money" ngModel i18n-placeholder required>
+            <input matInput placeholder="How much money you willing to invest" name="money" ngModel i18n-placeholder required type="number">
         </mat-form-field>
     </div>
   
-  </div>
+</div>
   
   <div ngModelGroup="{{modelGroupName}}">
   
@@ -19,7 +19,7 @@
           <mat-checkbox value="Modern City" i18n>Modern City</mat-checkbox>
           <mat-checkbox value="Old City's" i18n>Old City's</mat-checkbox>
           <mat-checkbox value="Museums" i18n>Museums</mat-checkbox>
-          <mat-checkbox value="Don't Mind" i18n>Don't Mind</mat-checkbox>
+          <mat-checkbox value="Involve water trips" i18n>Involve water trips</mat-checkbox>
         </div>
   </div>
   
@@ -48,5 +48,14 @@
   
     </div>
   
+
+
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+            <mat-form-field fxFlex="45">
+                <input matInput placeholder="Free Text" name="free-text" ngModel i18n-placeholder >
+            </mat-form-field>
+        </div>
+      
+
    
   </div>
