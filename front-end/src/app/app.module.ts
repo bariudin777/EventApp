@@ -49,6 +49,7 @@ import { OrganizeTripFormComponent } from './event/new-event/forms/organize-trip
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PicnicCompleteFormComponent } from './event/new-event/forms/end-point-forms/picnic-complete-form/picnic-complete-form.component';
 import { BirthdayCompleteFormComponent } from './event/new-event/forms/end-point-forms/birthday-complete-form/birthday-complete-form.component';
+import { OrganizeCompleteFormComponent } from './event/new-event/forms/end-point-forms/organize-complete-form/organize-complete-form.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { BirthdayCompleteFormComponent } from './event/new-event/forms/end-point
     AboutUsComponent,
     PicnicCompleteFormComponent,
     BirthdayCompleteFormComponent,
+    OrganizeCompleteFormComponent,
   ],
   imports: [
     BrowserModule,
