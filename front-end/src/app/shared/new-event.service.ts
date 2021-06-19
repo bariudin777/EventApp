@@ -13,7 +13,7 @@ export class NewEventService {
   selectedEvent: NewEvent = {
     name: '',
     members: '',
-    formID: '',
+    formName: '',
     message: ''
   };
 

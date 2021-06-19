@@ -29,15 +29,14 @@ router.route('/new-mail')
                 pass: "Db307758334"
             }
         });
-        
         var mailOptions = {
             from: "bariudin123@outlook.com",
             to: req.body.members,
             subject: "Event App Action-Center",
             text:
-                `Congratulation! You have been invited to new event!!
+            `Congratulation! You have been invited to new event!!
             Please fill the following form:  
-            http://localhost:4200/simple-form
+            http://localhost:4200/${req.body.formName}
             It is important to know that:`,
 
         };

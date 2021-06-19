@@ -30,12 +30,9 @@
 
           <label class="label">Event Form Selection</label>
           <!-- <input type="text" > -->
-          <div class="buttons">
-
-            <button id="select-form-btn" #formID="ngModel" 
-            [(ngModel)]="newEventService.selectedEvent.formID" class="button is-link"
-             (click)="openFormSelection()" name="formID" (onClose)="showModal=false">Select Event Form</button>
-
+          <div class="buttons" #formName="ngModel" [(ngModel)]="newEventService.selectedEvent.formName" name="formName">
+            <button id="select-form-btn" class="button is-link"
+             (click)="openFormSelection()" (onClose)="showModal=false">Select Event Form</button>
             <app-form-modal *ngIf="showModal" (onClose)="selectedItem($event)"></app-form-modal>
           </div>
           <!--Event Message Input-->

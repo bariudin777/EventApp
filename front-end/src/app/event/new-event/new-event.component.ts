@@ -73,7 +73,7 @@ export class NewEventComponent implements OnInit {
  */
   saveData(form: NgForm) {
     form.controls['members'].setValue(this.members)
-    form.controls['formID'].setValue(this.form_type);
+    form.controls['formName'].setValue(this.form_type);
 
     this.newEventService.postEvent(form.value).subscribe(
       res => {
@@ -124,7 +124,7 @@ export class NewEventComponent implements OnInit {
     this.newEventService.selectedEvent = {
       name: '',
       members: '',
-      formID: '',
+      formName: '',
       message: ''
     }
   }
@@ -133,10 +133,9 @@ export class NewEventComponent implements OnInit {
    * @param form 
    * Handles form creation
    */
-  actionCenter(form:NgForm): void{
+  actionCenter(form: NgForm): void{
     //if all input are filed and valid
     if (this.validateInputs()) {
-      //TODO: make dialog for sucsses
       this.saveData(form)
       this.sendEmail(form)
       setTimeout(() => {
