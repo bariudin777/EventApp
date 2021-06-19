@@ -6,6 +6,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import { NewEmailService } from 'src/app/shared/new-email.service';
 import { Router } from "@angular/router";
+import { DataManagerService } from 'src/app/shared/data-manager.service';
 
 export interface Email {
   addr: string;
@@ -29,11 +30,16 @@ export class NewEventComponent implements OnInit {
   members: String[] = [];
   showModal: boolean = false;
   selected: string = '';
+  private form_type: string | undefined;
   
 
-  constructor(public newEventService:NewEventService,public emailService:NewEmailService,private router : Router) { }
+  constructor(public newEventService:NewEventService,private data_manager:DataManagerService,public emailService:NewEmailService,private router : Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.data_manager.curr_msg.subscribe(form_type => this.form_type = form_type)
+
+
+   }
   /**
    * Add chip(emails)
    * @param event 
@@ -67,9 +73,8 @@ export class NewEventComponent implements OnInit {
  */
   saveData(form: NgForm) {
     form.controls['members'].setValue(this.members)
-    form.controls['formID'].setValue(Math.random());
+    form.controls['formID'].setValue(this.form_type);
 
-    debugger
     this.newEventService.postEvent(form.value).subscribe(
       res => {
         this.showSuccessMessage = true;
@@ -94,7 +99,6 @@ export class NewEventComponent implements OnInit {
  * @param form 
  */
   sendEmail(form: NgForm) {
-    form.controls['members'].setValue(this.members)
     this.emailService.postMail(form.value).subscribe(
       res => {
         console.log(res);
@@ -133,16 +137,15 @@ export class NewEventComponent implements OnInit {
     //if all input are filed and valid
     if (this.validateInputs()) {
       //TODO: make dialog for sucsses
-      this.sendEmail(form)
       this.saveData(form)
+      this.sendEmail(form)
       setTimeout(() => {
         this.router.navigateByUrl('/event-center');
       }, 2000);
       
     }
     else {
-      //TODO: make dialog for failure
-      alert("false")
+      alert("Please fill all the inputs !")
       
     }
   }
@@ -150,7 +153,7 @@ export class NewEventComponent implements OnInit {
    * Click event
    * when press on modal popup
    */
-  selectItem() {
+   openFormSelection() {
     this.showModal = true;
   }
   /**

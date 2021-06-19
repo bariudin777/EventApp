@@ -34,7 +34,7 @@
 
             <button id="select-form-btn" #formID="ngModel" 
             [(ngModel)]="newEventService.selectedEvent.formID" class="button is-link"
-             (click)="selectItem()" name="formID" (onClose)="showModal=false">Select Event Form</button>
+             (click)="openFormSelection()" name="formID" (onClose)="showModal=false">Select Event Form</button>
 
             <app-form-modal *ngIf="showModal" (onClose)="selectedItem($event)"></app-form-modal>
           </div>

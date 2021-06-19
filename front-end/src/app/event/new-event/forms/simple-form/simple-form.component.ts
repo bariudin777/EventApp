@@ -47,14 +47,17 @@ export class SimpleFormComponent implements OnInit {
     }
   }
 
-
+/**
+ * 
+ * @param form 
+ * Submit function to data base- this form will be filled by users
+ */
   onSubmit(form: NgForm): void {
+    const json = JSON.stringify(form.value);
+    debugger
+    this.router.navigateByUrl('/new-event');
     return;
   }
 
-  onClick(form: NgForm): void {
-    const json = JSON.stringify(form.value);
-    this.router.navigateByUrl('/new-event');
-  }
 
 }

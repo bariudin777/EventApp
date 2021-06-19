@@ -18,7 +18,6 @@ export class DataManagerService {
   }
 
   sendUserName(msg: string) {
-    console.log("data manager: " + msg);
     this.user_name.next(msg); 
   }
 
