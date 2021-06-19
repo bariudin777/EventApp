@@ -137,6 +137,7 @@ export class NewEventComponent implements OnInit {
     //if all input are filed and valid
     if (this.validateInputs()) {
       this.saveData(form)
+      debugger
       this.sendEmail(form)
       setTimeout(() => {
         this.router.navigateByUrl('/event-center');
