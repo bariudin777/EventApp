@@ -4,7 +4,7 @@
 
     <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
         <mat-form-field fxFlex="45">
-            <input matInput placeholder="How much mode you willing to invest" name="money" ngModel i18n-placeholder required>
+            <input matInput placeholder="How much money you willing to invest" name="money" ngModel i18n-placeholder required>
         </mat-form-field>
     </div>
   
@@ -15,8 +15,10 @@
         <!--Prefer Locations-->
         <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="30px">
           <mat-label ngModel i18n>Prefer Locations:</mat-label>
-          <mat-checkbox value="Open Location" i18n>Open Location</mat-checkbox>
-          <mat-checkbox value="Close Location" i18n>Close Location</mat-checkbox>
+          <mat-checkbox value="Nature" i18n>Nature</mat-checkbox>
+          <mat-checkbox value="Modern City" i18n>Modern City</mat-checkbox>
+          <mat-checkbox value="Old City's" i18n>Old City's</mat-checkbox>
+          <mat-checkbox value="Museums" i18n>Museums</mat-checkbox>
           <mat-checkbox value="Don't Mind" i18n>Don't Mind</mat-checkbox>
         </div>
   </div>
