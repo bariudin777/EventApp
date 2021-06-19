@@ -41,7 +41,7 @@ export class FormModalComponent implements OnInit {
       // this.router.navigateByUrl('/simple-form');
     }
     else if (this.selected == "picnic-form") {
-      this.data_manager.sendFormId("picnic-option");
+      this.data_manager.sendFormId("picnic-form");
       // this.router.navigateByUrl('/simple-form');
     }
     else {

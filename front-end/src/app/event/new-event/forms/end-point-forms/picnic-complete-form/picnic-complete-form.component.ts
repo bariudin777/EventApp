@@ -16,7 +16,7 @@ export class PicnicCompleteFormComponent implements OnInit {
   onClick(form: NgForm): void {
     const json = JSON.stringify(form.value);
 
-    console.log(json);
+
 
   }
 
