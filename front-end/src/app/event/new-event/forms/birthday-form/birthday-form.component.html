@@ -34,16 +34,54 @@
       </mat-form-field>
 </div>
 
-<div ngModelGroup="{{modelGroupName}}">
-
-  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
-
-      <mat-form-field fxFlex="20">
-          <input matInput [matDatepicker]="picker" placeholder="Prefer Date" name="preferDate" ngModel i18n-placeholder required>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-
-  </div>
-
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+  
+  <mat-form-field fxFlex="20" i18n-placeholder required>
+      <mat-label i18n>Drinks</mat-label >
+          <mat-select name="Drinks" ngModel required>
+              <mat-option value="Non Alcoholic kit" i18n>Non Alcoholic kit</mat-option>
+              <mat-option value="50% Alcohol 50% non-Alcohol" i18n>50% Alcohol 50% non-Alcohol</mat-option>
+              <mat-option value="Only Alcohol" i18n>Only Alcohol</mat-option>
+      </mat-select>
+    </mat-form-field>
 </div>
+
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+
+  <mat-form-field fxFlex="20" i18n-placeholder required>
+      <mat-label i18n>Food</mat-label >
+          <mat-select name="Food" ngModel required>
+              <mat-option value="Center Area" i18n>Center Area</mat-option>
+              <mat-option value="South Area" i18n>South Area</mat-option>
+              <mat-option value="North Area" i18n>North Area</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+
+  <mat-form-field fxFlex="20" i18n-placeholder required>
+      <mat-label i18n>Snacks</mat-label >
+          <mat-select name="Snacks" ngModel required>
+              <mat-option value="Center Area" i18n>Center Area</mat-option>
+              <mat-option value="South Area" i18n>South Area</mat-option>
+              <mat-option value="North Area" i18n>North Area</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+
+  <mat-form-field fxFlex="20" i18n-placeholder required>
+      <mat-label i18n>Dessert</mat-label >
+          <mat-select name="Dessert" ngModel required>
+              <mat-option value="Center Area" i18n>Center Area</mat-option>
+              <mat-option value="South Area" i18n>South Area</mat-option>
+              <mat-option value="North Area" i18n>North Area</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+      <mat-form-field fxFlex="45">
+          <input matInput placeholder="Free Text" name="free-text" ngModel i18n-placeholder >
+      </mat-form-field>
+  </div>

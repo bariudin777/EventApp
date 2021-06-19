@@ -22,7 +22,7 @@
             <ng-template matStepLabel>Organize</ng-template>
             <app-organize-trip-form modelGroupName="app-organize-trip-form"></app-organize-trip-form>
           </mat-step>
-          <mat-step *ngIf="flag==='picnic-optionחחח'" #picnic="ngModelGroup" ngModelGroup="picnic" [completed]="picnic.valid">
+          <mat-step *ngIf="flag==='picnic-option'" #picnic="ngModelGroup" ngModelGroup="picnic" [completed]="picnic.valid">
             <ng-template matStepLabel>Picnic</ng-template>
             <app-picnic-form modelGroupName="app-picnic-form"></app-picnic-form>
           </mat-step>
