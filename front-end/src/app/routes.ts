@@ -7,7 +7,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { EventCenterComponent } from './home/home/event-center/event-center.component';
 import { NewEventComponent } from './event/new-event/new-event.component';
 import { SimpleFormComponent } from './event/new-event/forms/simple-form/simple-form.component';
-import { BirthdayFormComponent } from './event/new-event/forms/birthday-form/birthday-form.component';
+import { PicnicCompleteFormComponent } from './event/new-event/forms/end-point-forms/picnic-complete-form/picnic-complete-form.component';
+import { BirthdayCompleteFormComponent } from './event/new-event/forms/end-point-forms/birthday-complete-form/birthday-complete-form.component';
 
 
 export const appRoutes: Routes = [
@@ -44,7 +45,14 @@ export const appRoutes: Routes = [
         path:'simple-form',component:SimpleFormComponent
         
     },
-    
+    {
+        path:'picnic-form',component:PicnicCompleteFormComponent
+        
+    },
+    {
+        path:'birthday-form',component:BirthdayCompleteFormComponent
+        
+    },
     {
         path:'new-mail',redirectTo:'/home',pathMatch:'full'
         
