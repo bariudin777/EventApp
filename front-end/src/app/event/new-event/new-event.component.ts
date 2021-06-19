@@ -136,8 +136,8 @@ export class NewEventComponent implements OnInit {
   actionCenter(form: NgForm): void{
     //if all input are filed and valid
     if (this.validateInputs()) {
-      this.saveData(form)
       debugger
+      this.saveData(form)
       this.sendEmail(form)
       setTimeout(() => {
         this.router.navigateByUrl('/event-center');
@@ -164,7 +164,8 @@ export class NewEventComponent implements OnInit {
  selectedItem(selected:string) {
   this.showModal = false; // hide modal
    if (selected) {
-    this.selected = selected;
+     this.selected = selected;
+
   }
  }
   

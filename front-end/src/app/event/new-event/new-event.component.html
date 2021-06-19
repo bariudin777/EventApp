@@ -29,8 +29,10 @@
           </mat-form-field>
 
           <label class="label">Event Form Selection</label>
-          <!-- <input type="text" > -->
-          <div class="buttons" #formName="ngModel" [(ngModel)]="newEventService.selectedEvent.formName" name="formName">
+          <!-- <input type="text" >  -->
+          <div class="form-input-display" >
+            <input id="input-form-id" type="text" #formName="ngModel" [(ngModel)]="newEventService.selectedEvent.formName" value={{selected}} readonly="readonly" name="formName" placeholder="Event Form Name"
+            required  [ngClass]="{'invalid-textbox' :newEventForm.submitted}">
             <button id="select-form-btn" class="button is-link"
              (click)="openFormSelection()" (onClose)="showModal=false">Select Event Form</button>
             <app-form-modal *ngIf="showModal" (onClose)="selectedItem($event)"></app-form-modal>
