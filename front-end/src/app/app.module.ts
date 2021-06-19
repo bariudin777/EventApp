@@ -46,6 +46,7 @@ import { InfoDialogComponent } from './dialog-manager/info-dialog/info-dialog.co
 import { AboutComponent } from './home/home-page-utils/about/about.component';
 import { PicnicFormComponent } from './event/new-event/forms/picnic-form/picnic-form.component';
 import { OrganizeTripFormComponent } from './event/new-event/forms/organize-trip-form/organize-trip-form.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { OrganizeTripFormComponent } from './event/new-event/forms/organize-trip
     AboutComponent,
     PicnicFormComponent,
     OrganizeTripFormComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
