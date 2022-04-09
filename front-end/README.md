@@ -31,12 +31,12 @@ Here are some of the views:
 
 
 Sign-In:
-![](images-for-git/1.jpg)
+![](https://github.com/bariudin777/EventApp/blob/master/images-for-git/1.jpg)
 
 Home page:
-![](images-for-git/2.jpg)
+![](https://github.com/bariudin777/EventApp/blob/master/images-for-git/2.jpg)
 
 New event creation:
-![](images-for-git/3.jpg)
+![](https://github.com/bariudin777/EventApp/blob/master/images-for-git/3.jpg)
 
 
