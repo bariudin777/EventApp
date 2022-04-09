@@ -1,7 +1,8 @@
 # EventApp
-A MEAN Fullstack event generating application.
-The app is using ml recommendation system model, 
-and integrates with outer services.
+Mean stack app that generates event management system.
+Used ML Recommendation collaborative filtering for user bases event recommendations
+using Python.
+
 
 
 
